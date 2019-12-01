@@ -6,6 +6,10 @@ def mass(module):
     return rs
 
 
-with open("input.txt") as f:
-    lines = [mass(int(line.strip())) for line in f.readlines()]
-print(sum(lines))  # 4903759
+def part_2(modules):
+    return sum([mass(int(module)) for module in modules])
+
+
+if __name__ == "__main__":
+    with open("input.txt") as f:
+        print(part_2([line.strip() for line in f.readlines()]))
