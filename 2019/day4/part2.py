@@ -11,7 +11,6 @@ for check in range(start, stop + 1):
     if not re.match(r"^1*2*3*4*5*6*7*8*9*$", str(check)):
         continue
     for x in digits:
-        check = str(check).replace(x*6, "")
         check = str(check).replace(x*5, "")
         check = str(check).replace(x*4, "")
         check = str(check).replace(x*3, "")
