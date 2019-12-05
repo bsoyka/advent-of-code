@@ -1,4 +1,5 @@
 from string import digits
+import re
 
 with open("input.txt") as f:
     start, stop = map(int, f.readlines()[0].strip().split("-"))
@@ -12,7 +13,7 @@ for check in range(start, stop + 1):
         repeats += check.count(x * 2)
     if not repeats > 0:
         continue
-    if not all(x <= y for x, y in zip(check, check[1:])):
+    if not re.match(r"^1*2*3*4*5*6*7*8*9*$", check):
         continue
     valid += 1
 print(valid)  # 511
