@@ -1,4 +1,8 @@
-# Advent of Code Solutions
-In this repository, you can find my [Advent of Code][aoc] solutions from past and current years' challenges. All of my solutions are written in Python.
+# Advent of Code® solutions
+In this repository, you can find my [Advent of Code](https://adventofcode.com/) solutions from past and current years' challenges.
 
-[aoc]: https://adventofcode.com
+All of my solutions are written in Python and licensed under [the MIT License](LICENSE).
+
+---
+
+Advent of Code is a registered trademark of Eric K Wastl in the United States.
