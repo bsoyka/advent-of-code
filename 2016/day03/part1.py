@@ -1,4 +1,5 @@
 import re
+
 with open("input.txt") as f:
     triangles = [list(map(int, re.findall(r"\d+", line.strip()))) for line in f]
 valid = 0

@@ -20,7 +20,7 @@ for instruction in instructions:
             for card in deck:
                 new[current] = card
                 current += num
-                while current > len(deck)-1:
+                while current > len(deck) - 1:
                     current -= len(deck)
             deck = list(new)
 print(deck.index(2019))

@@ -4,7 +4,7 @@ length = 6
 with open("input.txt") as f:
     start = f.readlines()[0].strip()
 pixels = width * length
-layers = [start[i:i+pixels] for i in range(0, len(start), pixels)]
+layers = [start[i : i + pixels] for i in range(0, len(start), pixels)]
 layer_zeros = [layer.count("0") for layer in layers]
 min_zeroes = min(layer_zeros)
 res_layer = layers[layer_zeros.index(min_zeroes)]

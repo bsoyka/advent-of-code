@@ -7,7 +7,7 @@ with open("input.txt") as f:
 
 def fmt_bits(x):
     x = bin(x)[2:]
-    x = '0' * (16 - len(x)) + x
+    x = "0" * (16 - len(x)) + x
     return x
 
 
@@ -19,6 +19,6 @@ for i in range(40_000_000):
     gen_b = (gen_b * fac_b) % divisor
     if fmt_bits(gen_a)[-16:] == fmt_bits(gen_b)[-16:]:
         final += 1
-    if not (i+1) % 1_000_000:
+    if not (i + 1) % 1_000_000:
         print(f"{i+1} done")
 print(final)

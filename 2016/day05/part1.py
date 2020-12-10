@@ -1,5 +1,6 @@
 import re
 import hashlib
+
 with open("input.txt") as f:
     prefix = f.read().strip()
 regex = re.compile(r"^0{5}.")

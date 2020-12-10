@@ -8,7 +8,10 @@ def main(stdscr):
     with open("input.txt") as f:
         for line_index, line in enumerate(f.readlines()):
             row = line.strip()
-            grid[str(line_index)] = {str(char_index): char for char_index, char in enumerate([char for char in row])}
+            grid[str(line_index)] = {
+                str(char_index): char
+                for char_index, char in enumerate([char for char in row])
+            }
     loc = [25 // 2, 25 // 2]
     facing = "N"
     done = 0
@@ -16,7 +19,11 @@ def main(stdscr):
 
     def update():
         for i in range(25):
-            stdscr.addstr(i + 1, 1, " " + " ".join([grid[str(i)][str(x)] for x in range(25)]) + " ")
+            stdscr.addstr(
+                i + 1,
+                1,
+                " " + " ".join([grid[str(i)][str(x)] for x in range(25)]) + " ",
+            )
         if 0 <= loc[0] <= 24 and 0 <= loc[1] <= 24:
             stdscr.addstr(loc[1] + 1, (loc[0] * 2) + 1, "[")
             stdscr.addstr(loc[1] + 1, (loc[0] * 2) + 3, "]")
