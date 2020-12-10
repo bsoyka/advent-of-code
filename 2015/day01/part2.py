@@ -1,13 +1,17 @@
-with open("input.txt") as f:
-    start = f.readlines()[0].strip()
+from pathlib import Path
+from sys import exit
+
+with (Path(__file__).parent / "input.txt").open() as f:
+    instructions = f.read().strip()
+
 floor = 0
-for index, char in enumerate(start, start=1):
+
+for index, char in enumerate(instructions, instructions=1):
     if char == "(":
         floor += 1
-    elif char == ")":
-        floor -= 1
     else:
-        raise ValueError(f"Unknown character: {char}")
+        floor -= 1
+
     if floor < 0:
-        print(index)
-        break
+        print(index)  # 1771
+        exit()

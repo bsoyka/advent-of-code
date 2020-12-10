@@ -1,17 +1,22 @@
-with open("input.txt") as f:
-    start = f.readlines()[0].strip()
-current = [0, 0]
-visited = [[0, 0]]
-for move in start:
-    if move == ">":
-        current[0] += 1
-    elif move == "<":
-        current[0] -= 1
-    elif move == "^":
-        current[1] += 1
-    elif move == "v":
-        current[1] -= 1
+from pathlib import Path
 
-    if current not in visited:
-        visited.append([current[0], current[1]])
-print(len(visited))
+with (Path(__file__).parent / "input.txt").open() as f:
+    moves = f.read().strip()
+
+santa = [0, 0]
+visited = [[0, 0]]
+
+for move in moves:
+    if move == ">":
+        santa[0] += 1
+    elif move == "<":
+        santa[0] -= 1
+    elif move == "^":
+        santa[1] += 1
+    elif move == "v":
+        santa[1] -= 1
+
+    if santa not in visited:
+        visited.append([santa[0], santa[1]])
+
+print(len(visited))  # 2572

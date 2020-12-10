@@ -1,11 +1,14 @@
-with open("input.txt") as f:
-    start = f.readlines()[0].strip()
+from pathlib import Path
+
+with (Path(__file__).parent / "input.txt").open() as f:
+    instructions = f.read().strip()
+
 floor = 0
-for char in start:
+
+for char in instructions:
     if char == "(":
         floor += 1
-    elif char == ")":
-        floor -= 1
     else:
-        raise ValueError(f"Unknown character: {char}")
-print(floor)
+        floor -= 1
+
+print(floor)  # 138

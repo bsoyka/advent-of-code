@@ -1,17 +1,17 @@
-import hashlib
-import re
+from hashlib import md5
+from pathlib import Path
+from re import match
+from sys import exit
 
-with open("input.txt") as f:
-    start = f.readlines()[0].strip()
-
-
-def md5(obj):
-    return hashlib.md5(obj.encode("utf-8")).hexdigest()
-
+with (Path(__file__).parent / "input.txt").open() as f:
+    key = f.read().strip()
 
 number = 0
+
 while True:
     number += 1
-    if re.match(r"^0{5,}", md5(f"{start}{number}")):
-        print(number)
-        break
+    hashed = md5(f"{key}{number}".encode("utf-8")).hexdigest()
+
+    if match(r"^0{5,}", hashed):
+        print(number)  # 346386
+        exit()

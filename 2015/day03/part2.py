@@ -1,34 +1,43 @@
-with open("input.txt") as f:
-    start = f.readlines()[0].strip()
-current = [0, 0]
-current2 = [0, 0]
+from pathlib import Path
+
+with (Path(__file__).parent / "input.txt").open() as f:
+    moves = f.read().strip()
+
+santa = [0, 0]
+robo_santa = [0, 0]
+
 visited = [[0, 0]]
+
 robo = False
-for move in start:
+
+for move in moves:
     if robo:
         if move == ">":
-            current2[0] += 1
+            robo_santa[0] += 1
         elif move == "<":
-            current2[0] -= 1
+            robo_santa[0] -= 1
         elif move == "^":
-            current2[1] += 1
+            robo_santa[1] += 1
         elif move == "v":
-            current2[1] -= 1
+            robo_santa[1] -= 1
 
-        if current2 not in visited:
-            visited.append([current2[0], current2[1]])
+        if robo_santa not in visited:
+            visited.append([robo_santa[0], robo_santa[1]])
+
         robo = False
     else:
         if move == ">":
-            current[0] += 1
+            santa[0] += 1
         elif move == "<":
-            current[0] -= 1
+            santa[0] -= 1
         elif move == "^":
-            current[1] += 1
+            santa[1] += 1
         elif move == "v":
-            current[1] -= 1
+            santa[1] -= 1
 
-        if current not in visited:
-            visited.append([current[0], current[1]])
+        if santa not in visited:
+            visited.append([santa[0], santa[1]])
+
         robo = True
-print(len(visited))
+
+print(len(visited))  # 2631
