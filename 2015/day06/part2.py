@@ -24,4 +24,4 @@ for instruction in instructions:
             for y in range(coordinates[1], coordinates[3] + 1):
                 lights[x][y] += 2
 
-print(sum(sum(line) for line in lights))  # 17836115
+print(sum(sum(line) for line in lights))

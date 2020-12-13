@@ -6,12 +6,12 @@ with (Path(__file__).parent / "input.txt").open() as f:
 
 floor = 0
 
-for index, char in enumerate(instructions, instructions=1):
+for index, char in enumerate(instructions, start=1):
     if char == "(":
         floor += 1
     else:
         floor -= 1
 
     if floor < 0:
-        print(index)  # 1771
+        print(index)
         exit()

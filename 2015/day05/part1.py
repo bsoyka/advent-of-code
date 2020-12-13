@@ -26,4 +26,4 @@ for test_str in strings:
     if vowels(test_str) >= 3 and doubles(test_str) >= 1:
         nice += 1
 
-print(nice)  # 258
+print(nice)

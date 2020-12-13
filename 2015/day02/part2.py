@@ -18,4 +18,4 @@ res = 0
 for l, w, h in gifts:
     res += smallest_perimeter(l, w, h) + (l * w * h)
 
-print(res)  # 3812909
+print(res)

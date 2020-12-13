@@ -11,4 +11,4 @@ for char in instructions:
     else:
         floor -= 1
 
-print(floor)  # 138
+print(floor)

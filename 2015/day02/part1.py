@@ -18,4 +18,4 @@ res = 0
 for gift in gifts:
     res += surface_area(*gift) + smallest_side(*gift)
 
-print(res)  # 1598415
+print(res)

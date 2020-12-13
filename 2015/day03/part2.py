@@ -40,4 +40,4 @@ for move in moves:
 
         robo = True
 
-print(len(visited))  # 2631
+print(len(visited))

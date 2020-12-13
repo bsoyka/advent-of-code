@@ -24,4 +24,4 @@ for instruction in instructions:
             for y in range(coordinates[1], coordinates[3]+1):
                 lights[x][y] = False if lights[x][y] else True
 
-print(sum(line.count(True) for line in lights)) # 569999
+print(sum(line.count(True) for line in lights))

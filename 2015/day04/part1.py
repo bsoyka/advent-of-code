@@ -13,5 +13,5 @@ while True:
     hashed = md5(f"{key}{number}".encode("utf-8")).hexdigest()
 
     if match(r"^0{5,}", hashed):
-        print(number)  # 346386
+        print(number)
         exit()

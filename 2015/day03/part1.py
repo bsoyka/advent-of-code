@@ -19,4 +19,4 @@ for move in moves:
     if santa not in visited:
         visited.append([santa[0], santa[1]])
 
-print(len(visited))  # 2572
+print(len(visited))
