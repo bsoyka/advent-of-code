@@ -1,5 +1,7 @@
 from pathlib import Path
 
+from advent_of_code_ocr import convert_6  # pip install advent-of-code-ocr
+
 width = 25
 length = 6
 
@@ -12,12 +14,12 @@ for pixel_index in range(pixels):
     layer_pixel = "2"
     for layer in layers:
         if layer[pixel_index] == "1":
-            layer_pixel = "█"
+            layer_pixel = "#"
             break
         elif layer[pixel_index] == "0":
-            layer_pixel = " "
+            layer_pixel = "."
             break
     final_pixels.append(layer_pixel)
 final_chunks = [final_pixels[i : i + width] for i in range(0, len(final_pixels), width)]
-for chunk in final_chunks:
-    print("".join(chunk))
+
+print(convert_6("\n".join("".join(chunk) for chunk in final_chunks)))
