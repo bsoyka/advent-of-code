@@ -1,5 +1,7 @@
+from pathlib import Path
+
 def reset():
-    with open("input.txt") as f:
+    with (Path(__file__).parent / "input.txt").open() as f:
         return list(map(int, f.readlines()[0].strip().split(",")))
 
 

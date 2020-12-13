@@ -1,3 +1,5 @@
+from pathlib import Path
+
 def mass(module):
     rs = 0
     ch = module + 0
@@ -11,5 +13,5 @@ def part_2(modules):
 
 
 if __name__ == "__main__":
-    with open("input.txt") as f:
+    with (Path(__file__).parent / "input.txt").open() as f:
         print(part_2([line.strip() for line in f.readlines()]))

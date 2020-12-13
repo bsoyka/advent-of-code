@@ -1,7 +1,9 @@
+from pathlib import Path
+
 fac_a = 16_807
 fac_b = 48_271
 divisor = 2_147_483_647
-with open("input.txt") as f:
+with (Path(__file__).parent / "input.txt").open() as f:
     generators = [int(line.strip()[23:]) for line in f]
 
 

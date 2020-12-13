@@ -1,7 +1,9 @@
+from pathlib import Path
+
 width = 25
 length = 6
 
-with open("input.txt") as f:
+with (Path(__file__).parent / "input.txt").open() as f:
     start = f.readlines()[0].strip()
 pixels = width * length
 layers = [start[i : i + pixels] for i in range(0, len(start), pixels)]

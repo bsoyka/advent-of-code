@@ -1,4 +1,6 @@
-with open("input.txt") as f:
+from pathlib import Path
+
+with (Path(__file__).parent / "input.txt").open() as f:
     start = f.readlines()[0].strip()
 total = 0
 for index_1, char_1 in enumerate(start):

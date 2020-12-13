@@ -1,4 +1,6 @@
-with open("input.txt") as f:
+from pathlib import Path
+
+with (Path(__file__).parent / "input.txt").open() as f:
     lines = [line.strip() for line in f]
 columns = [[] for _ in range(len(lines[0]))]
 final = []

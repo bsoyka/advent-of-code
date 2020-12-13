@@ -1,4 +1,6 @@
-with open("input.txt") as f:
+from pathlib import Path
+
+with (Path(__file__).parent / "input.txt").open() as f:
     expenses = [int(line.strip()) for line in f.readlines()]
 
 set_expenses = set(expenses)

@@ -1,7 +1,8 @@
 import re
+from pathlib import Path
 
 regex = r"([a-z ]+) (-?\d+)"
-with open("input.txt") as f:
+with (Path(__file__).parent / "input.txt").open() as f:
     instructions = [line.strip() for line in f.readlines()]
 
 deck = list(range(10007))

@@ -1,7 +1,8 @@
 from string import digits
 import re
+from pathlib import Path
 
-with open("input.txt") as f:
+with (Path(__file__).parent / "input.txt").open() as f:
     start, stop = map(int, f.readlines()[0].strip().split("-"))
 valid = 0
 for check in range(start, stop + 1):

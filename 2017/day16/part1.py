@@ -1,4 +1,6 @@
-with open("input.txt") as f:
+from pathlib import Path
+
+with (Path(__file__).parent / "input.txt").open() as f:
     steps = [(step[0], step[1:]) for step in f.read().strip().split(",")]
 dancers = [char for char in "abcdefghijklmnop"]
 for step in steps:

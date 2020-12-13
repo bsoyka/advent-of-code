@@ -1,4 +1,6 @@
-with open("input.txt") as f:
+from pathlib import Path
+
+with (Path(__file__).parent / "input.txt").open() as f:
     start = [
         ["".join(sorted(word)) for word in line.strip().split(" ")]
         for line in f.readlines()

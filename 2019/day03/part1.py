@@ -1,4 +1,6 @@
-with open("input.txt") as f:
+from pathlib import Path
+
+with (Path(__file__).parent / "input.txt").open() as f:
     lines = [line.strip().split(",") for line in f.readlines()]
 line_locs = [set(), set()]
 for line_index, line in enumerate(lines):

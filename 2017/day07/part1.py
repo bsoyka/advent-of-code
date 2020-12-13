@@ -1,6 +1,7 @@
 import re
+from pathlib import Path
 
-with open("input.txt") as f:
+with (Path(__file__).parent / "input.txt").open() as f:
     lines = [line.strip() for line in f]
 regex = re.compile(r"^([a-z]+) \(\d+\) -> ([a-z, ]+)$")
 holding = set()

@@ -1,4 +1,6 @@
-with open("input.txt") as f:
+from pathlib import Path
+
+with (Path(__file__).parent / "input.txt").open() as f:
     txt = list(map(int, f.readlines()[0].strip().split(",")))
 pos = 0
 while True:

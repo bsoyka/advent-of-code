@@ -1,7 +1,8 @@
 import re
 import hashlib
+from pathlib import Path
 
-with open("input.txt") as f:
+with (Path(__file__).parent / "input.txt").open() as f:
     prefix = f.read().strip()
 regex = re.compile(r"^0{5}[0-7].")
 index = 0

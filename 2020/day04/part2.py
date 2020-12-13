@@ -1,7 +1,8 @@
 from itertools import groupby
 from re import match
+from pathlib import Path
 
-with open("input.txt") as f:
+with (Path(__file__).parent / "input.txt").open() as f:
     passport_lines = [line.strip() for line in f.readlines()]
 
 passports = list(
