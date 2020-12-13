@@ -20,4 +20,4 @@ for check in range(start, stop + 1):
     if not repeats > 0:
         continue
     valid += 1
-print(valid)  # 316
+print(valid)

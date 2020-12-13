@@ -17,4 +17,4 @@ for check in range(start, stop + 1):
     if not re.match(r"^1*2*3*4*5*6*7*8*9*$", check):
         continue
     valid += 1
-print(valid)  # 511
+print(valid)
