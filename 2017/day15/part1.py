@@ -21,6 +21,4 @@ for i in range(40_000_000):
     gen_b = (gen_b * fac_b) % divisor
     if fmt_bits(gen_a)[-16:] == fmt_bits(gen_b)[-16:]:
         final += 1
-    if not (i + 1) % 1_000_000:
-        print(f"{i+1} done")
 print(final)

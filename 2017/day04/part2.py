@@ -9,4 +9,4 @@ result = 0
 for password in start:
     if len(password) == len(set(password)):
         result += 1
-print(result)  # 251
+print(result)
