@@ -18,4 +18,4 @@ for triangle in triangles:
 
     valid += 1
 
-print(valid)  # 1050
+print(valid)

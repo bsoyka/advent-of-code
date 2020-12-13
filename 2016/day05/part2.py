@@ -13,7 +13,6 @@ while None in final:
         m.update(f"{prefix}{index}".encode("utf-8"))
         index += 1
         if regex.match(m.hexdigest()):
-            print(index, m.hexdigest(), m.hexdigest()[5], m.hexdigest()[6])
             if final[int(m.hexdigest()[5])] is not None:
                 continue
             final[int(m.hexdigest()[5])] = m.hexdigest()[6]
