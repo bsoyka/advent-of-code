@@ -1,1 +1,1 @@
-advent-of-code-ocr==0.1.0
+advent-of-code-ocr==0.2.0
