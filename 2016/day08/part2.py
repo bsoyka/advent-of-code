@@ -22,7 +22,5 @@ for instruction in instructions:
         array[:, x] = np.roll(array[:, x], y)
 
 print(
-    convert_6(
-        "\n".join(map("".join, array.astype(str))), fill_pixel="1", empty_pixel="0"
-    )
+        "\n".join(map("".join, array.astype(str)))
 )
