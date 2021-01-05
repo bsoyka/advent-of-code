@@ -10,6 +10,6 @@ indent_style = space
 
 trim_trailing_whitespace = true
 
-[input.txt]
+[aoc/**/input.txt]
 insert_final_newline = false
 trim_trailing_whitespace = false
