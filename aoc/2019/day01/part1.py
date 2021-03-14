@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 def part_1(modules):
     return sum([int(module) // 3 - 2 for module in modules])
 

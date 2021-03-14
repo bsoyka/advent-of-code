@@ -1,5 +1,6 @@
 from pathlib import Path
 
+
 def mass(module):
     rs = 0
     ch = module + 0

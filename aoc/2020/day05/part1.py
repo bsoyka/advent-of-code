@@ -7,6 +7,6 @@ seat_ids = []
 trans = str.maketrans("FBLR", "0101")
 
 for seat in seats:
-    seat_ids.append(int(seat.translate(trans),2))
+    seat_ids.append(int(seat.translate(trans), 2))
 
 print(max(seat_ids))

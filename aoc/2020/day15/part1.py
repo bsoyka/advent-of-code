@@ -11,7 +11,7 @@ last = numbers[-1]
 for i, number in enumerate(numbers, start=1):
     called[number].append(i)
 
-for turn in range(len(numbers)+1, 2021):
+for turn in range(len(numbers) + 1, 2021):
     if len(called[last]) < 2:
         last = 0
     else:

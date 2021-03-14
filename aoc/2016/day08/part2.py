@@ -21,6 +21,4 @@ for instruction in instructions:
     elif text[0] == "column":
         array[:, x] = np.roll(array[:, x], y)
 
-print(
-        "\n".join(map("".join, array.astype(str)))
-)
+print("\n".join(map("".join, array.astype(str))))
