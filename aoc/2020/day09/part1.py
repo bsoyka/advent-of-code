@@ -1,5 +1,5 @@
-from pathlib import Path
 from itertools import combinations
+from pathlib import Path
 from sys import exit
 
 with (Path(__file__).parent / "input.txt").open() as f:

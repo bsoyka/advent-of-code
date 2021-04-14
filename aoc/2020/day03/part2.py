@@ -1,5 +1,5 @@
-from pathlib import Path
 from math import prod
+from pathlib import Path
 
 SLOPES = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 

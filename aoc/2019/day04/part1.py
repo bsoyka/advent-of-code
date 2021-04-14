@@ -1,6 +1,6 @@
-from string import digits
 import re
 from pathlib import Path
+from string import digits
 
 with (Path(__file__).parent / "input.txt").open() as f:
     start, stop = map(int, f.readlines()[0].strip().split("-"))
