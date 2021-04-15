@@ -1,26 +1,18 @@
-from itertools import combinations
 from pathlib import Path
 from sys import exit
 
 with (Path(__file__).parent / "input.txt").open() as f:
-    numbers = [*map(int, [line.strip() for line in f.readlines()])]
+    numbers = [int(line.strip()) for line in f.readlines()]
 
-index = 25
+window = numbers[:25]
 
-while True:
-    good = False
-    print(index)
+for n in numbers[25:]:
+    differences = set([n - x for x in window])
+    is_valid = len(set(window).intersection(differences))
 
-    for combo in [
-        list(combo) for combo in combinations(numbers[index - 25 : index], 2)
-    ]:
-        print(combo)
-        if sum(combo) != numbers[index]:
-            good = True
-            break
-
-    if not good:
-        print(numbers[index])
+    if not is_valid:
+        print(n)
         exit()
-
-    index += 1
+    else:
+        window.append(n)
+        window.pop(0)
