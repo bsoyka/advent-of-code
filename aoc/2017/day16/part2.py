@@ -22,7 +22,7 @@ while True:
 sequence = len(dance_list)
 remaining = 1_000_000_000 % sequence
 dancers = [char for char in "abcdefghijklmnop"]
-for i in range(remaining):
+for _ in range(remaining):
     for step in steps:
         if step[0] == "s":
             num = int(step[1])

@@ -16,7 +16,7 @@ def fmt_bits(x):
 final = 0
 gen_a = generators[0]
 gen_b = generators[1]
-for i in range(40_000_000):
+for _ in range(40_000_000):
     gen_a = (gen_a * fac_a) % divisor
     gen_b = (gen_b * fac_b) % divisor
     if fmt_bits(gen_a)[-16:] == fmt_bits(gen_b)[-16:]:

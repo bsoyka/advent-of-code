@@ -17,7 +17,7 @@ for check in range(start, stop + 1):
         check = check.replace(x * 4, "")
         check = check.replace(x * 3, "")
         repeats += check.count(x * 2)
-    if not repeats > 0:
+    if repeats <= 0:
         continue
     valid += 1
 print(valid)

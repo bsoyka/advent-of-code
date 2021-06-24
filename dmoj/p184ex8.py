@@ -4,7 +4,7 @@ spoiled = 0
 for _ in range(int(input())):
     vote = input()
 
-    if vote in candidates.keys():
+    if vote in candidates:
         candidates[vote] += 1
     else:
         spoiled += 1

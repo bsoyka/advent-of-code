@@ -34,9 +34,8 @@ for _ in range(6):
                 if (x, y, z) in active:
                     if active_neighbors(active, x, y, z) in (2, 3):
                         new_active.add((x, y, z))
-                else:
-                    if active_neighbors(active, x, y, z) == 3:
-                        new_active.add((x, y, z))
+                elif active_neighbors(active, x, y, z) == 3:
+                    new_active.add((x, y, z))
 
     active = list(new_active)
 

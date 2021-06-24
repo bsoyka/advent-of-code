@@ -28,10 +28,6 @@ def has_shiny_gold(color):
         return any(has_shiny_gold(content_color) for content_color in bags[color])
 
 
-matches = 0
-
-for color in bags.keys():
-    if has_shiny_gold(color):
-        matches += 1
+matches = sum(1 for color in bags.keys() if has_shiny_gold(color))
 
 print(matches)

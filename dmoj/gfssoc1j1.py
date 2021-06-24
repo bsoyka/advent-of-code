@@ -1,9 +1,5 @@
 height = int(input())
 
-plushies = 0
-
-for _ in range(int(input())):
-    if int(input()) >= height:
-        plushies += 1
+plushies = sum(int(input()) >= height for _ in range(int(input())))
 
 print(plushies)

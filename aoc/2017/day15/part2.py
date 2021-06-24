@@ -16,7 +16,7 @@ def fmt_bits(x):
 final = 0
 gen_a = generators[0]
 gen_b = generators[1]
-for i in range(5_000_000):
+for _ in range(5_000_000):
     gen_a = (gen_a * fac_a) % divisor
     while gen_a % 4:
         gen_a = (gen_a * fac_a) % divisor
