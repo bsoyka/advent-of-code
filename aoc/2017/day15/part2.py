@@ -3,13 +3,13 @@ from pathlib import Path
 fac_a = 16_807
 fac_b = 48_271
 divisor = 2_147_483_647
-with (Path(__file__).parent / "input.txt").open() as f:
+with (Path(__file__).parent / 'input.txt').open() as f:
     generators = [int(line.strip()[23:]) for line in f]
 
 
 def fmt_bits(x):
     x = bin(x)[2:]
-    x = "0" * (16 - len(x)) + x
+    x = '0' * (16 - len(x)) + x
     return x
 
 

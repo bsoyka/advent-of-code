@@ -1,1 +1,1 @@
-print("Y" if int(input()) * int(input()) <= int(input()) else "N")
+print('Y' if int(input()) * int(input()) <= int(input()) else 'N')

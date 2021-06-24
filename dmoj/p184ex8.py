@@ -1,4 +1,4 @@
-candidates = {char: 0 for char in "ABCDEF"}
+candidates = {char: 0 for char in 'ABCDEF'}
 spoiled = 0
 
 for _ in range(int(input())):
@@ -9,7 +9,7 @@ for _ in range(int(input())):
     else:
         spoiled += 1
 
-for char in "ABCDEF":
+for char in 'ABCDEF':
     print(candidates[char])
 
 print(spoiled)

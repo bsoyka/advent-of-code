@@ -1,6 +1,6 @@
 from pathlib import Path
 
-with (Path(__file__).parent / "input.txt").open() as f:
+with (Path(__file__).parent / 'input.txt').open() as f:
     moves = f.read().strip()
 
 santa = [0, 0]
@@ -12,13 +12,13 @@ robo = False
 
 for move in moves:
     if robo:
-        if move == ">":
+        if move == '>':
             robo_santa[0] += 1
-        elif move == "<":
+        elif move == '<':
             robo_santa[0] -= 1
-        elif move == "^":
+        elif move == '^':
             robo_santa[1] += 1
-        elif move == "v":
+        elif move == 'v':
             robo_santa[1] -= 1
 
         if robo_santa not in visited:
@@ -26,13 +26,13 @@ for move in moves:
 
         robo = False
     else:
-        if move == ">":
+        if move == '>':
             santa[0] += 1
-        elif move == "<":
+        elif move == '<':
             santa[0] -= 1
-        elif move == "^":
+        elif move == '^':
             santa[1] += 1
-        elif move == "v":
+        elif move == 'v':
             santa[1] -= 1
 
         if santa not in visited:

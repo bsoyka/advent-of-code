@@ -1,1 +1,1 @@
-print("sp" + "o" * int(input()) + "ky")
+print('sp' + 'o' * int(input()) + 'ky')

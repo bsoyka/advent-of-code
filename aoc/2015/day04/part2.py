@@ -3,15 +3,15 @@ from pathlib import Path
 from re import match
 from sys import exit
 
-with (Path(__file__).parent / "input.txt").open() as f:
+with (Path(__file__).parent / 'input.txt').open() as f:
     key = f.read().strip()
 
 number = 0
 
 while True:
     number += 1
-    hashed = md5(f"{key}{number}".encode("utf-8")).hexdigest()
+    hashed = md5(f'{key}{number}'.encode('utf-8')).hexdigest()
 
-    if match(r"^0{6,}", hashed):
+    if match(r'^0{6,}', hashed):
         print(number)
         exit()

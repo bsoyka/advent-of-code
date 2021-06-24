@@ -1,12 +1,12 @@
-print("Ready")
+print('Ready')
 
 while True:
     text = input()
 
-    if text == "  ":
+    if text == '  ':
         break
 
-    if text in {"bd", "db", "pq", "qp"}:
-        print("Mirrored pair")
+    if text in {'bd', 'db', 'pq', 'qp'}:
+        print('Mirrored pair')
     else:
-        print("Ordinary pair")
+        print('Ordinary pair')

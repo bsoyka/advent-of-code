@@ -1,1 +1,1 @@
-print(input() + ", eh")
+print(input() + ', eh')

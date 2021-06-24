@@ -1,3 +1,3 @@
 input()
 
-print(min(map(int, input().split(" "))))
+print(min(map(int, input().split(' '))))

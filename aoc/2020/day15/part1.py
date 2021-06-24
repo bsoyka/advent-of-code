@@ -1,8 +1,8 @@
 from collections import defaultdict, deque
 from pathlib import Path
 
-input_text = (Path(__file__).parent / "input.txt").read_text()
-numbers = list(map(int, input_text.split(",")))
+input_text = (Path(__file__).parent / 'input.txt').read_text()
+numbers = list(map(int, input_text.split(',')))
 
 called = defaultdict(lambda: deque([], maxlen=2))
 

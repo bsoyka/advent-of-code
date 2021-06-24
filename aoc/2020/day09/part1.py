@@ -1,7 +1,7 @@
 from pathlib import Path
 from sys import exit
 
-with (Path(__file__).parent / "input.txt").open() as f:
+with (Path(__file__).parent / 'input.txt').open() as f:
     numbers = [int(line.strip()) for line in f.readlines()]
 
 window = numbers[:25]

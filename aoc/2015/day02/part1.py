@@ -1,7 +1,7 @@
 from pathlib import Path
 
-with (Path(__file__).parent / "input.txt").open() as f:
-    gifts = [list(map(int, line.strip().split("x"))) for line in f.readlines()]
+with (Path(__file__).parent / 'input.txt').open() as f:
+    gifts = [list(map(int, line.strip().split('x'))) for line in f.readlines()]
 
 
 def surface_area(l, w, h):

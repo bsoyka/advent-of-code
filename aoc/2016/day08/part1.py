@@ -4,21 +4,21 @@ from re import findall
 import numpy as np
 from advent_of_code_ocr import convert_6
 
-with (Path(__file__).parent / "input.txt").open() as f:
+with (Path(__file__).parent / 'input.txt').open() as f:
     instructions = [instruction.strip() for instruction in f.readlines()]
 
 array = np.zeros([6, 50], dtype=int)
 
 for instruction in instructions:
-    x, y = map(int, findall(r"\d+", instruction))
+    x, y = map(int, findall(r'\d+', instruction))
 
-    inst, *text = instruction.split(" ")
+    inst, *text = instruction.split(' ')
 
-    if inst == "rect":
+    if inst == 'rect':
         array[:y, :x] = 1
-    elif text[0] == "row":
+    elif text[0] == 'row':
         array[x] = np.roll(array[x], y)
-    elif text[0] == "column":
+    elif text[0] == 'column':
         array[:, x] = np.roll(array[:, x], y)
 
 unique, counts = np.unique(array, return_counts=True)

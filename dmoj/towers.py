@@ -1,5 +1,5 @@
 count = int(input())
-towers = [*map(int, input().split(" "))]
+towers = [*map(int, input().split(' '))]
 
 good = 0
 

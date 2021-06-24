@@ -4,10 +4,10 @@ from pathlib import Path
 
 active = []
 
-with (Path(__file__).parent / "input.txt").open() as f:
+with (Path(__file__).parent / 'input.txt').open() as f:
     for row, line in enumerate(line.strip() for line in f.readlines()):
         for col, char in enumerate(line):
-            if char == "#":
+            if char == '#':
                 active.append((col, row, 0))
 
 

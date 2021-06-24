@@ -13,6 +13,6 @@ def part_2(modules):
     return sum(mass(int(module)) for module in modules)
 
 
-if __name__ == "__main__":
-    with (Path(__file__).parent / "input.txt").open() as f:
+if __name__ == '__main__':
+    with (Path(__file__).parent / 'input.txt').open() as f:
         print(part_2([line.strip() for line in f.readlines()]))

@@ -1,7 +1,7 @@
 from collections import Counter
 from pathlib import Path
 
-with (Path(__file__).parent / "input.txt").open() as f:
+with (Path(__file__).parent / 'input.txt').open() as f:
     boxes = [line.strip() for line in f]
 
 two_letters = 0

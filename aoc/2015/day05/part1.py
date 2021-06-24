@@ -1,12 +1,12 @@
 from pathlib import Path
 from string import ascii_lowercase
 
-with (Path(__file__).parent / "input.txt").open() as f:
+with (Path(__file__).parent / 'input.txt').open() as f:
     strings = [line.strip() for line in f.readlines()]
 
 
 def vowels(string):
-    return sum(string.count(vowel) for vowel in ["a", "e", "i", "o", "u"])
+    return sum(string.count(vowel) for vowel in ['a', 'e', 'i', 'o', 'u'])
 
 
 def doubles(string):
@@ -14,7 +14,7 @@ def doubles(string):
 
 
 def bad_substrings(string):
-    return sum(string.count(sub) for sub in ["ab", "cd", "pq", "xy"])
+    return sum(string.count(sub) for sub in ['ab', 'cd', 'pq', 'xy'])
 
 
 nice = 0

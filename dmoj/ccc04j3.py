@@ -6,4 +6,4 @@ second_words = [input() for _ in range(second_count)]
 
 for first in first_words:
     for second in second_words:
-        print(f"{first} as {second}")
+        print(f'{first} as {second}')
