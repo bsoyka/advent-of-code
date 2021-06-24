@@ -22,6 +22,6 @@ for instruction in instructions:
     elif instruction.startswith("toggle"):
         for x in range(coordinates[0], coordinates[2] + 1):
             for y in range(coordinates[1], coordinates[3] + 1):
-                lights[x][y] = False if lights[x][y] else True
+                lights[x][y] = not lights[x][y]
 
 print(sum(line.count(True) for line in lights))

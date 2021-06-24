@@ -10,7 +10,7 @@ def mass(module):
 
 
 def part_2(modules):
-    return sum([mass(int(module)) for module in modules])
+    return sum(mass(int(module)) for module in modules)
 
 
 if __name__ == "__main__":

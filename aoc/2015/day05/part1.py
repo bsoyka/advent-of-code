@@ -6,15 +6,15 @@ with (Path(__file__).parent / "input.txt").open() as f:
 
 
 def vowels(string):
-    return sum([string.count(vowel) for vowel in ["a", "e", "i", "o", "u"]])
+    return sum(string.count(vowel) for vowel in ["a", "e", "i", "o", "u"])
 
 
 def doubles(string):
-    return sum([string.count(pair * 2) for pair in ascii_lowercase])
+    return sum(string.count(pair * 2) for pair in ascii_lowercase)
 
 
 def bad_substrings(string):
-    return sum([string.count(sub) for sub in ["ab", "cd", "pq", "xy"]])
+    return sum(string.count(sub) for sub in ["ab", "cd", "pq", "xy"])
 
 
 nice = 0

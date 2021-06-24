@@ -13,9 +13,6 @@ def smallest_side(l, w, h):
     return sorted([l, w, h])[0] * sorted([l, w, h])[1]
 
 
-res = 0
-
-for gift in gifts:
-    res += surface_area(*gift) + smallest_side(*gift)
+res = sum(surface_area(*gift) + smallest_side(*gift) for gift in gifts)
 
 print(res)

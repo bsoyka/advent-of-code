@@ -21,11 +21,7 @@ while len(player_1) > 0 and len(player_2) > 0:
         player_2.append(p2_card)
         player_2.append(p1_card)
 
-if len(player_1) > 0:
-    winner = player_1
-else:
-    winner = player_2
-
+winner = player_1 if len(player_1) > 0 else player_2
 score = sum(index * card for index, card in enumerate(winner[::-1], start=1))
 
 print(score)

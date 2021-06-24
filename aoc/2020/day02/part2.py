@@ -15,11 +15,11 @@ password_sets = [
 good = 0
 
 for password_set in password_sets:
-    count = 0
+    count = sum(
+        password_set[2][position - 1] == password_set[1]
+        for position in password_set[0]
+    )
 
-    for position in password_set[0]:
-        if password_set[2][position - 1] == password_set[1]:
-            count += 1
 
     if count == 1:
         good += 1

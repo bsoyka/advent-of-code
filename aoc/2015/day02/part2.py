@@ -13,9 +13,6 @@ def smallest_perimeter(l, w, h):
     return sorted([l, w, h])[0] * 2 + sorted([l, w, h])[1] * 2
 
 
-res = 0
-
-for l, w, h in gifts:
-    res += smallest_perimeter(l, w, h) + (l * w * h)
+res = sum(smallest_perimeter(l, w, h) + (l * w * h) for l, w, h in gifts)
 
 print(res)

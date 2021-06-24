@@ -7,7 +7,7 @@ with (Path(__file__).parent / "input.txt").open() as f:
 window = numbers[:25]
 
 for n in numbers[25:]:
-    differences = set([n - x for x in window])
+    differences = {n - x for x in window}
     is_valid = len(set(window).intersection(differences))
 
     if not is_valid:

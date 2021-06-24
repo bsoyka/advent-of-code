@@ -12,14 +12,10 @@ password_sets = [
     for line in password_lines
 ]
 
-good = 0
-
-for password_set in password_sets:
-    if (
+good = sum((
         password_set[0][0]
         <= password_set[2].count(password_set[1])
         <= password_set[0][1]
-    ):
-        good += 1
+    ) for password_set in password_sets)
 
 print(good)

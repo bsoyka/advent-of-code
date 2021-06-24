@@ -31,12 +31,8 @@ for sue in sue_list:
         groups[5]: int(groups[6]),
     }
 
-    good = True
+    good = all(known[item] == count for item, count in sue_known.items())
 
-    for item, count in sue_known.items():
-        if known[item] != count:
-            good = False
-
-    if good == True:
+    if good:
         print(number)
         exit()
