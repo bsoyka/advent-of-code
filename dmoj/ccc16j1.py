@@ -1,4 +1,4 @@
-wins = sum(1 for _ in range(6) if input() == 'W')
+wins = sum(input() == 'W' for _ in range(6))
 
 if wins >= 5:
     print(1)

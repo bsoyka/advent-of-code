@@ -1,8 +1,10 @@
 from string import digits
+from typing import List
 
 for _ in range(int(input())):
     name = input().lower()
-    phrases = []
+    phrases: List[str] = []
+
     for letter in name:
         if letter == 'a':
             phrases.append('Hi!')
@@ -16,4 +18,5 @@ for _ in range(int(input())):
             phrases.append('Help!')
         elif letter in digits:
             phrases.append('Yes!')
+
     print(' '.join(phrases))

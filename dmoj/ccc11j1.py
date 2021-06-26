@@ -9,7 +9,7 @@ aliens: Dict[str, List[Callable]] = {
     ],
 }
 
-description: Dict[str, int] = {'antennae': int(input()), 'eyes': int(input())}
+description = {'antennae': int(input()), 'eyes': int(input())}
 
 for alien, criteria in aliens.items():
     if all(criterion(description) for criterion in criteria):

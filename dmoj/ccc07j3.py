@@ -1,15 +1,3 @@
-values = [
-    100,
-    500,
-    1_000,
-    5_000,
-    10_000,
-    25_000,
-    50_000,
-    100_000,
-    500_000,
-    1_000_000,
-]
 numbers = {
     '1': 100,
     '2': 500,
@@ -22,15 +10,12 @@ numbers = {
     '9': 500_000,
     '10': 1_000_000,
 }
+values = numbers.values()
 
 for _ in range(int(input())):
     values.remove(numbers[input()])
 
-offer = int(input())
-
-average = sum(values) / len(values)
-
-if average < offer:
+if sum(values) / len(values) < int(input()):
     print('deal')
 else:
     print('no deal')

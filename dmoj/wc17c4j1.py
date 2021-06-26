@@ -1,4 +1,3 @@
 c = input()
-t = input()
 
-print(c if c == t else 'Undecided')
+print(c if c == input() else 'Undecided')

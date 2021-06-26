@@ -1,3 +1,1 @@
-rings = tuple(map(int, input().split(' ')))
-
-print(sum(rings) + 1)
+print(sum(map(int, input().split(' '))) + 1)

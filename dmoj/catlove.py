@@ -1,9 +1,7 @@
 cats = 0
 
 for _ in range(int(input())):
-    vote = input()
-
-    if vote == 'cats':
+    if input() == 'cats':
         cats += 1
     else:
         cats -= 1

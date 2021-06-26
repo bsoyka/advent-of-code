@@ -1,4 +1,2 @@
-nums = [int(input()) for _ in range(int(input()))]
-
-for num in sorted(nums):
+for num in sorted([int(input()) for _ in range(int(input()))]):
     print(num)
