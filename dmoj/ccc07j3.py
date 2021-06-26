@@ -10,7 +10,7 @@ numbers = {
     '9': 500_000,
     '10': 1_000_000,
 }
-values = numbers.values()
+values = list(numbers.values())
 
 for _ in range(int(input())):
     values.remove(numbers[input()])
