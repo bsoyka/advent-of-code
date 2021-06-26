@@ -2,5 +2,6 @@
     "editor.rulers": [
         72,
         79
-    ]
+    ],
+    "reflowMarkdown.preferredLineLength": 79
 }
