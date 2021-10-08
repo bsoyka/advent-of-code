@@ -1,7 +1,7 @@
 # Challenge solutions
 
 This repository contains my completed and functional solutions to
-[Advent of Code®][aoc], [DMOJ][dmoj], and [Exercism][exercism] challenges.
+[Advent of Code®][aoc], [DMOJ][dmoj], and [Exercism®][exercism] challenges.
 
 All of my solutions are in Python and are licensed under the
 [MIT License][license].
@@ -15,6 +15,7 @@ before viewing the solutions in this repository.
 ---
 
 Advent of Code is a registered trademark of Eric K Wastl in the United States.
+EXERCISM is a registered trademark of Exercism, Inc. in the United States.
 
 [aoc]: https://adventofcode.com/
 [dmoj]: https://dmoj.ca/
