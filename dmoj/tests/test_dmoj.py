@@ -4,14 +4,13 @@ from sys import executable
 from types import LambdaType
 from typing import List, Union
 
-from pytest import mark, fail
-
-from .dmoj_data import problems
+from dmoj_data import problems
+from pytest import fail, mark
 
 all_tests: List[List[Union[str, list]]] = [
     [problem, *test] for problem, tests in problems.items() for test in tests
 ]
-dmoj_dir = Path(__file__).parent.parent / 'dmoj'
+dmoj_dir = Path(__file__).parent.parent
 
 
 @mark.parametrize('problem,test_input,expected_output', all_tests)
