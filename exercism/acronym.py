@@ -1,8 +1,7 @@
-import re
+from re import findall, sub
 
 
-def abbreviate(words):
-    clean_words = re.sub(r'[^A-Za-z0-9\s\-]', '', words).upper()
-    words_list = re.findall(r'\w+', clean_words)
-    abbr = [word[0] for word in words_list]
-    return ''.join(abbr)
+def abbreviate(words: str) -> str:
+    clean_words = sub(r'[^A-Za-z0-9\s\-]', '', words).upper()
+    words_list = findall(r'\w+', clean_words)
+    return ''.join(word[0] for word in words_list)
