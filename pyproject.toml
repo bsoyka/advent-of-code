@@ -3,12 +3,14 @@ line-length = 79
 
 [tool.isort]
 import_heading_aocd = "Input data loading"
+import_heading_logging = "Simple logging"
 import_heading_utils = "Utilities for this day"
 known_aocd = "aocd"
+known_logging = "loguru"
 known_utils = "utils"
 line_length = 79
 profile = "black"
-sections = "FUTURE,STDLIB,FIRSTPARTY,AOCD,THIRDPARTY,UTILS,LOCALFOLDER"
+sections = "FUTURE,STDLIB,FIRSTPARTY,AOCD,LOGGING,THIRDPARTY,UTILS,LOCALFOLDER"
 
 [tool.poe.tasks]
 _black = "black ."
