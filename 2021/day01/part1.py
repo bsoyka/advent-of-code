@@ -5,13 +5,16 @@ from aocd import get_data
 from loguru import logger
 
 depths = list(map(int, get_data(year=2021, day=1).splitlines()))
-logger.debug("Loaded depths list")
+logger.info("Loaded depths list")
 
-result = sum(
-    1 if depths[index - 1] < depth else 0
-    for index, depth in enumerate(depths)
-    if index != 0
-)
-logger.debug("Calculated result")
+result: int = 0
 
-logger.success(result)
+for index, depth in enumerate(depths):
+    if index == 0:
+        logger.trace("Skipping index 0, depth {}", depth)
+        continue
+
+    if depths[index - 1] < depth:
+        result += 1
+
+logger.success("Result: {}", result)
