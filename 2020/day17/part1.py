@@ -1,5 +1,3 @@
-import collections
-import itertools
 from pathlib import Path
 
 active = []
