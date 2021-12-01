@@ -1,7 +1,7 @@
-# Challenge solutions
+# Advent of Code® solutions
 
 This repository contains my completed and functional solutions to each year's
-[Advent of Code®](https://adventofcode.com/) challenges.
+[Advent of Code](https://adventofcode.com/) challenges.
 
 All of my solutions are in Python and are licensed under the
 [MIT License](LICENSE).
@@ -11,6 +11,8 @@ All of my solutions are in Python and are licensed under the
 This repository is not intended to promote or otherwise encourage cheating on
 any of these sites. You should always try to complete a challenge on your own
 before viewing the solutions in this repository.
+
+If you need help, join [Python Discord](https://discord.gg/python)!
 
 ## Completion
 
