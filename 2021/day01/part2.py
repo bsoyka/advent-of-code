@@ -1,10 +1,10 @@
-# Input data loading
-from aocd import get_data
-
 # Simple logging
 from loguru import logger
 
-DEPTHS = list(map(int, get_data(year=2021, day=1).splitlines()))
+# Personal utilities
+from bsoyka_aoc_utils import get_data
+
+DEPTHS = get_data(2021, 1, func=int, split_lines=True)
 logger.info("Loaded depths list")
 
 result: int = 0

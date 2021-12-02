@@ -1,0 +1,35 @@
+### BUILD CONFIG ###
+
+[build-system]
+build-backend = "flit_core.buildapi"
+requires = ["flit_core >=3.2,<4"]
+
+[project]
+authors = [{name = "Ben Soyka", email = "bensoyka@icloud.com"}]
+classifiers = [
+  "Intended Audience :: Developers",
+  "Natural Language :: English",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+]
+dynamic = ["description"]
+license = {file = "LICENSE"}
+name = "bsoyka-aoc-utils"
+requires-python = "~=3.10"
+version = "1.0.0"
+
+[tool.flit.module]
+name = "bsoyka_aoc_utils"
+
+### TOOLS ###
+
+[tool.coverage.run]
+source = ["averager"]
+
+[tool.coverage.report]
+omit = ["tests/*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
