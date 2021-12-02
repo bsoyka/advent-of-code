@@ -4,12 +4,12 @@ from aocd import get_data
 # Simple logging
 from loguru import logger
 
-instructions = get_data(year=2021, day=2).splitlines()
+INSTRUCTIONS = get_data(year=2021, day=2).splitlines()
 logger.debug("Loaded instruction data")
 
 horizontal, depth, aim = 0, 0, 0
 
-for instruction in instructions:
+for instruction in INSTRUCTIONS:
     command, amount = instruction.split(" ")
 
     amount = int(amount)
