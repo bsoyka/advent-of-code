@@ -5,7 +5,7 @@ from loguru import logger
 from bsoyka_aoc_utils import get_data
 
 DEPTHS = get_data(2021, 1, func=int, split_lines=True)
-logger.info("Loaded depths list")
+logger.debug("Loaded depths list")
 
 result: int = 0
 
