@@ -1,5 +1,5 @@
-from typing import List
 import sys
+from typing import List
 
 # Simple logging
 from loguru import logger

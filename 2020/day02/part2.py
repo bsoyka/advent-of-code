@@ -1,26 +1,26 @@
-from pathlib import Path
+from typing import Tuple
 
-with (Path(__file__).parent / "input.txt").open() as f:
-    password_lines = [line.strip() for line in f.readlines()]
+# Simple logging
+from loguru import logger
 
-password_sets = [
-    (
-        [int(num) for num in line.split(" ")[0].split("-")],
-        line.split(" ")[1][:-1],
-        line.split(" ")[2],
-    )
-    for line in password_lines
-]
+# Personal utilities
+from bsoyka_aoc_utils import get_data
 
-good = 0
 
-for password_set in password_sets:
-    count = sum(
-        password_set[2][position - 1] == password_set[1]
-        for position in password_set[0]
-    )
+def process_line(line: str) -> Tuple[int, int, str, str]:
+    raw_split = line.split()
 
-    if count == 1:
-        good += 1
+    index1, index2 = map(int, raw_split[0].split("-"))
+    letter = raw_split[1][0]
+    password = raw_split[2]
 
-print(good)
+    # Use XOR to check that exactly one of the two conditions is met
+    if (password[index1 - 1] == letter) ^ (password[index2 - 1] == letter):
+        return 1
+
+    return 0
+
+
+ENTRIES = get_data(2020, 2, func=process_line, split_lines=True)
+
+logger.success("Result: {}", sum(ENTRIES))
