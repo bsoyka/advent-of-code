@@ -1,12 +1,21 @@
-from pathlib import Path
+from typing import List
+import sys
 
-with (Path(__file__).parent / "input.txt").open() as f:
-    expenses = [int(line.strip()) for line in f.readlines()]
+# Simple logging
+from loguru import logger
 
-set_expenses = set(expenses)
+# Personal utilities
+from bsoyka_aoc_utils import get_data
 
-for expense in expenses:
-    for expense2 in expenses:
-        if 2020 - expense - expense2 in set_expenses:
-            print(expense * expense2 * (2020 - expense - expense2))
-            exit()
+TOTAL = 2020
+
+ENTRIES: List[int] = get_data(2020, 1, func=int, split_lines=True)
+logger.info("Loaded entries list")
+
+for entry in ENTRIES:
+    for entry2 in ENTRIES:
+        if (entry3 := TOTAL - entry - entry2) in ENTRIES:
+            logger.info("Final entries: {}, {}, {}", entry, entry2, entry3)
+
+            logger.success("Result: {}", entry * entry2 * entry3)
+            sys.exit()

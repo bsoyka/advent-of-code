@@ -3,5 +3,8 @@
         72,
         79
     ],
-    "reflowMarkdown.preferredLineLength": 79
+    "reflowMarkdown.preferredLineLength": 79,
+    "python.analysis.extraPaths": [
+        "./utils"
+    ]
 }
