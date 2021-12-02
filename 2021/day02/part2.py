@@ -10,7 +10,7 @@ logger.debug("Loaded instruction data")
 horizontal, depth, aim = 0, 0, 0
 
 for instruction in instructions:
-    command, amount = instruction.strip().split(" ")
+    command, amount = instruction.split(" ")
 
     amount = int(amount)
 
