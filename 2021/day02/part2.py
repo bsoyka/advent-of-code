@@ -5,7 +5,7 @@ from loguru import logger
 from bsoyka_aoc_utils import get_data
 
 INSTRUCTIONS = get_data(2021, 2, split_lines=True)
-logger.debug("Loaded instruction data")
+logger.debug("Loaded instructions list")
 
 horizontal, depth, aim = 0, 0, 0
 

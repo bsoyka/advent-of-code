@@ -1,15 +1,18 @@
-from pathlib import Path
+# Simple logging
+from loguru import logger
 
-with (Path(__file__).parent / "input.txt").open() as f:
-    rows = [line.strip() for line in f.readlines()]
+# Personal utilities
+from bsoyka_aoc_utils import get_data
 
-trees = 0
-column = 0
+ROWS = get_data(2020, 3, split_lines=True)
+logger.debug("Loaded map data")
 
-for row in rows:
+trees, column = 0, 0
+
+for row in ROWS:
     if row[column] == "#":
         trees += 1
 
     column = (column + 3) % len(row)
 
-print(trees)
+logger.success("Result: {}", trees)

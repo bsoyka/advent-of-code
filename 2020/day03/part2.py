@@ -1,24 +1,26 @@
-from pathlib import Path
+# Simple logging
+from loguru import logger
+
+# Personal utilities
+from bsoyka_aoc_utils import get_data
 
 SLOPES = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 
-with (Path(__file__).parent / "input.txt").open() as f:
-    rows = [line.strip() for line in f.readlines()]
+ROWS = get_data(2020, 3, split_lines=True)
+logger.debug("Loaded map data")
 
-result = 1
+result: int = 1
 
-for slope, (right, down) in enumerate(SLOPES):
-    trees = 0
-    column = 0
-    row = 0
+for slope_index, (right, down) in enumerate(SLOPES):
+    trees, column, row = 0, 0, 0
 
-    while row < len(rows):
-        if rows[row][column] == "#":
+    while row < len(ROWS):
+        if ROWS[row][column] == "#":
             trees += 1
 
         row += down
-        column = (column + right) % len(rows[0])
+        column = (column + right) % len(ROWS[0])
 
     result *= trees
 
-print(result)
+logger.success("Result: {}", result)
