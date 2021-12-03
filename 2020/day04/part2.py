@@ -1,29 +1,39 @@
 from itertools import groupby
-from pathlib import Path
 from re import match
 
-with (Path(__file__).parent / "input.txt").open() as f:
-    passport_lines = [line.strip() for line in f.readlines()]
+# Simple logging
+from loguru import logger
 
-passports = [
+# Personal utilities
+from bsoyka_aoc_utils import get_data
+
+PASSPORT_LINES = get_data(2020, 4, split_lines=True)
+PASSPORTS = [
     " ".join(list(y))
-    for x, y in groupby(passport_lines, key=lambda x: x != "")
+    for x, y in groupby(PASSPORT_LINES, key=lambda x: x != "")
     if x
 ]
+logger.debug("Loaded passports data")
 
+valid: int = 0
 
-valid = 0
+for passport in PASSPORTS:
+    fields = dict(field.split(":") for field in passport.split(" "))
 
-for passport in passports:
-    fields = dict([field.split(":") for field in passport.split(" ")])
-
-    fields_needed = 7 - sum(
-        required_field in fields
-        for required_field in ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
-    )
-
-    if fields_needed != 0:
+    # Skip if any required field is missing
+    if any(
+        required_field not in fields
+        for required_field in ["byr", "ecl", "eyr", "hcl", "hgt", "iyr", "pid"]
+    ):
         continue
+
+    # Skip if any year is invalid
+    if any(
+        not match(r"^\d{4}$", fields[field]) for field in ["byr", "iyr", "eyr"]
+    ):
+        continue
+
+    # Check all year values
 
     if not 1920 <= int(fields["byr"]) <= 2002:
         continue
@@ -34,25 +44,35 @@ for passport in passports:
     if not 2020 <= int(fields["eyr"]) <= 2030:
         continue
 
-    height_match = match(r"^(\d{2,3})(in|cm)$", fields["hgt"])
-
-    if not height_match:
+    # Check the height with a regex, get the number and unit
+    if not (
+        height_match := match(
+            r"^(?P<value>\d{2,3})(?P<unit>in|cm)$", fields["hgt"]
+        )
+    ):
         continue
 
-    if height_match.groups()[1] == "in":
-        if not 59 <= int(height_match.groups()[0]) <= 76:
+    # Check inches
+    if height_match.group("unit") == "in":
+        if not 59 <= int(height_match.group("value")) <= 76:
             continue
-    elif not 150 <= int(height_match.groups()[0]) <= 193:
+    # Check centimeters
+    elif not 150 <= int(height_match.group("value")) <= 193:
         continue
+
+    # Check hair color as a valid hex code
     if not match(r"^#[0-9a-f]{6}$", fields["hcl"]):
         continue
 
+    # Check eye color
     if fields["ecl"] not in {"amb", "blu", "brn", "gry", "grn", "hzl", "oth"}:
         continue
 
+    # Check the passport ID as a nine-digit number
     if not match(r"^\d{9}$", fields["pid"]):
         continue
 
+    # All conditions met, valid passport
     valid += 1
 
-print(valid)
+logger.success("Result: {}", valid)

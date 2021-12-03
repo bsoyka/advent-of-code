@@ -1,27 +1,28 @@
 from itertools import groupby
-from pathlib import Path
 
-with (Path(__file__).parent / "input.txt").open() as f:
-    passport_lines = [line.strip() for line in f.readlines()]
+# Simple logging
+from loguru import logger
 
-passports = [
+# Personal utilities
+from bsoyka_aoc_utils import get_data
+
+PASSPORT_LINES = get_data(2020, 4, split_lines=True)
+PASSPORTS = [
     " ".join(list(y))
-    for x, y in groupby(passport_lines, key=lambda x: x != "")
+    for x, y in groupby(PASSPORT_LINES, key=lambda x: x != "")
     if x
 ]
+logger.debug("Loaded passports data")
 
+valid: int = 0
 
-valid = 0
-
-for passport in passports:
+for passport in PASSPORTS:
     field_names = [field.split(":")[0] for field in passport.split(" ")]
 
-    fields_needed = 7 - sum(
+    if all(
         required_field in field_names
-        for required_field in ["byr", "iyr", "eyr", "hgt", "hcl", "ecl", "pid"]
-    )
-
-    if fields_needed == 0:
+        for required_field in ["byr", "ecl", "eyr", "hcl", "hgt", "iyr", "pid"]
+    ):
         valid += 1
 
-print(valid)
+logger.success("Result: {}", valid)
