@@ -54,8 +54,8 @@ for bit_index in range(NUMBER_LENGTH):
         ]
 
 # Convert from binary strings to integers
-OXYGEN_RESULT = int(oxygen_possible[0], 2)
-CO2_RESULT = int(co2_possible[0], 2)
+OXYGEN_RESULT = int(oxygen_possible[0], base=2)
+CO2_RESULT = int(co2_possible[0], base=2)
 
 logger.info("Final oxygen reading: {} ({})", OXYGEN_RESULT, oxygen_possible[0])
 logger.info("Final CO2 reading: {} ({})", CO2_RESULT, co2_possible[0])

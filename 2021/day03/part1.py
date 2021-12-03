@@ -31,8 +31,8 @@ for col_counts in column_bit_counts:
     epsilon += col_counts.most_common()[-1][0]
 
 # Convert from binary strings to integers
-GAMMA_RESULT = int(gamma, 2)
-EPSILON_RESULT = int(epsilon, 2)
+GAMMA_RESULT = int(gamma, base=2)
+EPSILON_RESULT = int(epsilon, base=2)
 
 logger.info("Final gamma rate: {} ({})", GAMMA_RESULT, gamma)
 logger.info("Final epsilon rate: {} ({})", EPSILON_RESULT, epsilon)
