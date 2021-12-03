@@ -1,9 +1,20 @@
-from pathlib import Path
+from typing import List
 
-with (Path(__file__).parent / "input.txt").open() as f:
-    seats = [line.strip() for line in f.readlines()]
+# Simple logging
+from loguru import logger
 
-trans = str.maketrans("FBLR", "0101")
+# Personal utilities
+from bsoyka_aoc_utils import get_data
 
-seat_ids = [int(seat.translate(trans), 2) for seat in seats]
-print(max(seat_ids))
+SEATS: List[str] = get_data(2020, 5, split_lines=True)
+logger.debug("Loaded seats list")
+
+# Each seat ID is just a binary number with 10 bits, where F and L are 0
+# and R and B are 1.
+
+TRANS = str.maketrans("FBLR", "0101")  # Create translation dictionary
+
+# Get all seat IDs
+SEAT_IDS = [int(seat.translate(TRANS), base=2) for seat in SEATS]
+
+logger.success("Result: {}", max(SEAT_IDS))
