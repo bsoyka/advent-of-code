@@ -1,14 +1,20 @@
 from itertools import groupby
-from pathlib import Path
+from typing import List
 
-with (Path(__file__).parent / "input.txt").open() as f:
-    input_lines = [line.strip() for line in f.readlines()]
+# Simple logging
+from loguru import logger
 
-groups = [
-    set("".join(list(y)))
-    for x, y in groupby(input_lines, key=lambda x: x != "")
+# Personal utilities
+from bsoyka_aoc_utils import get_data
+
+CUSTOMS_LINES: List[str] = get_data(2020, 6, split_lines=True)
+CUSTOMS_FORMS = [
+    set("".join(y))
+    for x, y in groupby(CUSTOMS_LINES, key=lambda x: x != "")
     if x
 ]
+logger.debug("Loaded customs forms data")
 
+RESULT = sum(len(group) for group in CUSTOMS_FORMS)
 
-print(sum(len(group) for group in groups))
+logger.success("Result: {}", RESULT)
