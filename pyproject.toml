@@ -4,14 +4,16 @@ target-version = ["py310"]
 
 [tool.isort]
 import_heading_aocd = "Input data loading"
+import_heading_dayutils = "Utilities for this day"
 import_heading_logging = "Simple logging"
 import_heading_utils = "Personal utilities"
 known_aocd = "aocd"
+known_dayutils = "utils"
 known_logging = "loguru"
 known_utils = "bsoyka_aoc_utils"
 line_length = 79
 profile = "black"
-sections = "FUTURE,STDLIB,FIRSTPARTY,AOCD,LOGGING,THIRDPARTY,UTILS,LOCALFOLDER"
+sections = "FUTURE,STDLIB,FIRSTPARTY,AOCD,LOGGING,THIRDPARTY,UTILS,DAYUTILS,LOCALFOLDER"
 
 [tool.poe.tasks]
 _autoflake = "autoflake -i -r --remove-all-unused-imports ."

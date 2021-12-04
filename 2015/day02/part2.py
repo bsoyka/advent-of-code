@@ -1,10 +1,10 @@
 from typing import List, Tuple
 
-# Utilities for this day
-from utils import smallest_perimeter
-
 # Input data loading
 from aocd import get_data
+
+# Utilities for this day
+from utils import smallest_perimeter
 
 gifts: List[Tuple[int, int, int]] = [
     tuple(map(int, line.strip().split("x")))
