@@ -5,6 +5,8 @@ from typing import Any, Callable, Optional
 # Input data loading
 from aocd import get_data as _get_data
 
+__all__ = ("get_data",)
+
 
 def get_data(
     year: int,
@@ -23,7 +25,6 @@ def get_data(
         split_lines (bool, optional): Whether to split the input by
             newlines. Defaults to False.
     """
-
     raw_data = _get_data(year=year, day=day)  # Get the raw data as a string
 
     if split_lines:
