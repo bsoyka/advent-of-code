@@ -1,4 +1,5 @@
 import sys
+from dataclasses import dataclass
 from itertools import groupby
 
 # Simple logging
@@ -10,20 +11,21 @@ from bsoyka_aoc_utils import get_data
 DATA_LINES: list[str] = get_data(2021, 4, split_lines=True)
 
 
+@dataclass
 class BingoSpace:
     """A bingo space.
 
     Args:
         number (int): The number on the bingo space.
+        marked (bool): Whether the bingo space has been marked.
 
     Attributes:
         number (int): The number on the bingo space.
         marked (bool): Whether the bingo space has been marked.
     """
 
-    def __init__(self, number: int):
-        self.number = number
-        self.marked: bool = False
+    number: int
+    marked: bool = False
 
     def mark(self):
         """Mark the bingo space."""
@@ -98,12 +100,14 @@ CALL_NUMBERS = [
 
 BINGO_CARDS = [BingoCard.from_data(data) for data in DATA_LINE_GROUPS]
 
-for number in CALL_NUMBERS:
+logger.debug("Loaded call numbers and bingo cards data")
+
+for call_number in CALL_NUMBERS:
     for card in BINGO_CARDS:
-        card.mark_number(number)
+        card.mark_number(call_number)
 
         if card.won:
-            RESULT = card.unmarked_sum * number
+            RESULT = card.unmarked_sum * call_number
 
             logger.success("Result: {}", RESULT)
             sys.exit()
