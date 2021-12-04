@@ -52,7 +52,7 @@ If you need help, join [Python Discord](https://discord.gg/python)!
 |  23   |               |               |                        |               |                        |               |               |
 |  24   |               |               |                        |               |                        |               |               |
 |  25   |               |               |                        |               |                        |               |               |
-|       | **13 :star:** | **7 :star:**  | **9 :star:, 1 :boom:** | **3 :star:**  | **7 :star:, 3 :boom:** | **19 :star:** | **4 :star:**  |
+|       | **13 :star:** | **7 :star:**  | **9 :star:, 1 :boom:** | **3 :star:**  | **7 :star:, 3 :boom:** | **19 :star:** | **8 :star:**  |
 
 ---
 
