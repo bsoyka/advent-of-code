@@ -29,8 +29,8 @@ If you need help, join [Python Discord](https://discord.gg/python)!
 | :---: | :-----------: | :-----------: | :--------------------: | :-----------: | :--------------------: | :-----------: | :-----------: |
 |   1   | :star: :star: |               |     :star: :star:      | :star: :star: |     :star: :star:      | :star: :star: | :star: :star: |
 |   2   | :star: :star: |               |                        |    :star:     |     :boom: :boom:      | :star: :star: | :star: :star: |
-|   3   | :star: :star: |    :star:     |                        |               |         :boom:         | :star: :star: | :star :star:  |
-|   4   | :star: :star: |               |     :star: :star:      |               |     :star: :star:      | :star: :star: |               |
+|   3   | :star: :star: |    :star:     |                        |               |         :boom:         | :star: :star: | :star: :star: |
+|   4   | :star: :star: |               |     :star: :star:      |               |     :star: :star:      | :star: :star: | :star: :star: |
 |   5   |    :star:     | :star: :star: |                        |               |                        | :star: :star: |               |
 |   6   | :star: :star: | :star: :star: |                        |               |                        | :star: :star: |               |
 |   7   |               |               |         :star:         |               |                        |    :star:     |               |
