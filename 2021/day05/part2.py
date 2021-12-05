@@ -16,9 +16,8 @@ for line_data in LINES_DATA:
     line = Line2D.from_data(line_data)
     points = line.get_points(include_diagonals=True)
 
-    if points:
-        for point in points:
-            FIELD_COUNTS[point] += 1
+    for point in points:
+        FIELD_COUNTS[point] += 1
 
 RESULT = sum(count >= 2 for count in FIELD_COUNTS.values())
 

@@ -1,7 +1,6 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from typing import Optional
 
 from .points import Point2D
 
@@ -40,7 +39,7 @@ class Line2D:
 
         return cls(start, end)
 
-    def get_points(self, *, include_diagonals: bool = False) -> Optional[list[Point2D]]:
+    def get_points(self, *, include_diagonals: bool = False) -> list[Point2D]:
         """Get the points of the line.
 
         Keyword Args:
@@ -48,19 +47,16 @@ class Line2D:
                 diagonal points. Defaults to False.
 
         Returns:
-            list[Point2D], optional: The points of the line. Defaults to
-                None.
+            list[Point2D]: The points of the line.
         """
         if self.start.x == self.end.x:
             # The line is vertical.
-
             min_y, max_y = min(self.start.y, self.end.y), max(self.start.y, self.end.y)
 
             return [Point2D(self.start.x, y) for y in range(min_y, max_y + 1)]
 
         if self.start.y == self.end.y:
             # The line is horizontal.
-
             min_x, max_x = min(self.start.x, self.end.x), max(self.start.x, self.end.x)
 
             return [Point2D(x, self.start.y) for x in range(min_x, max_x + 1)]
@@ -84,4 +80,4 @@ class Line2D:
                 for x in range(min_x, max_x + 1)
             ]
 
-        return None
+        return []
