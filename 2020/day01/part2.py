@@ -9,7 +9,7 @@ from bsoyka_aoc_utils import get_data
 
 TOTAL = 2020
 
-ENTRIES: List[int] = get_data(2020, 1, func=int, split_lines=True)
+ENTRIES: List[int] = get_data(2020, 1, func=int, split=True)
 logger.debug("Loaded entries list")
 
 for entry in ENTRIES:

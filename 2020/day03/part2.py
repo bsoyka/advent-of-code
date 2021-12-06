@@ -6,7 +6,7 @@ from bsoyka_aoc_utils import get_data
 
 SLOPES = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 
-ROWS = get_data(2020, 3, split_lines=True)
+ROWS = get_data(2020, 3, split=True)
 logger.debug("Loaded map data")
 
 result: int = 1

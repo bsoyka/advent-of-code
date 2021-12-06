@@ -6,7 +6,7 @@ from loguru import logger
 # Personal utilities
 from bsoyka_aoc_utils import get_data
 
-SEATS: List[str] = get_data(2020, 5, split_lines=True)
+SEATS: List[str] = get_data(2020, 5, split=True)
 logger.debug("Loaded seats list")
 
 # Each seat ID is just a binary number with 10 bits, where F and L are 0

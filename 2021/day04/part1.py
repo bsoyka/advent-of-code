@@ -8,7 +8,7 @@ from loguru import logger
 from bsoyka_aoc_utils import get_data
 from bsoyka_aoc_utils.bingo import BingoCard
 
-DATA_LINES: list[str] = get_data(2021, 4, split_lines=True)
+DATA_LINES: list[str] = get_data(2021, 4, split=True)
 
 DATA_LINE_GROUPS = [
     list(y) for x, y in groupby(DATA_LINES, key=lambda x: x != "") if x

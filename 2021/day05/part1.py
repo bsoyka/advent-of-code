@@ -8,7 +8,7 @@ from bsoyka_aoc_utils import get_data
 from bsoyka_aoc_utils.lines import Line2D
 from bsoyka_aoc_utils.points import Point2D
 
-LINES_DATA: list[str] = get_data(2021, 5, split_lines=True)
+LINES_DATA: list[str] = get_data(2021, 5, split=True)
 
 FIELD_COUNTS: defaultdict[Point2D, int] = defaultdict(int)
 

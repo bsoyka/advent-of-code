@@ -13,7 +13,7 @@ def get_data(
     day: int,
     *,
     func: Optional[Callable[[str], Any]] = None,
-    split_lines: Optional[bool] = False,
+    split: Optional[bool | str] = False,
 ) -> Any:
     """Get and clean the data for a specific Advent of Code day.
 
@@ -22,13 +22,16 @@ def get_data(
         day (int): The challenge day.
         func (Callable): A function to call for each line (or the entire
             input if not splitting). Default is None.
-        split_lines (bool, optional): Whether to split the input by
-            newlines. Defaults to False.
+        split (bool, optional): The character(s) to split the input by,
+            or True to split by newlines. Defaults to False.
     """
     raw_data = _get_data(year=year, day=day)  # Get the raw data as a string
 
-    if split_lines:
-        data = raw_data.splitlines()  # Split by newlines if needed
+    if split is not False:
+        if isinstance(split, str):
+            data = raw_data.split(split)
+        else:
+            data = raw_data.splitlines()  # Split by newlines if needed
 
         if func:
             data = list(map(func, data))  # Map each line to the given type

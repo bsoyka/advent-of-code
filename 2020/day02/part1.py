@@ -20,6 +20,6 @@ def process_line(line: str) -> Tuple[int, int, str, str]:
     return 0
 
 
-ENTRIES = get_data(2020, 2, func=process_line, split_lines=True)
+ENTRIES = get_data(2020, 2, func=process_line, split=True)
 
 logger.success("Result: {}", sum(ENTRIES))

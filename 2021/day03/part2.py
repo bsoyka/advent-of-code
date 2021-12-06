@@ -6,7 +6,7 @@ from loguru import logger
 # Personal utilities
 from bsoyka_aoc_utils import get_data
 
-DIAGNOSTICS: List[str] = get_data(2021, 3, split_lines=True)
+DIAGNOSTICS: List[str] = get_data(2021, 3, split=True)
 logger.debug("Loaded diagnostics list")
 
 NUMBER_LENGTH = len(DIAGNOSTICS[0])
