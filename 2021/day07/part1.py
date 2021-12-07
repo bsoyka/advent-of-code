@@ -1,8 +1,9 @@
+from statistics import median
+
 # Simple logging
 from loguru import logger
 
 # Personal utilities
-from statistics import median
 from bsoyka_aoc_utils import get_data
 
 CRABS = get_data(2021, 7, func=int, split=",")
