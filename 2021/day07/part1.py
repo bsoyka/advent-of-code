@@ -2,18 +2,17 @@
 from loguru import logger
 
 # Personal utilities
+from statistics import median
 from bsoyka_aoc_utils import get_data
 
 CRABS = get_data(2021, 7, func=int, split=",")
 logger.debug("Loaded crabs data")
 
-FUEL_VALS: list[tuple[int, int]] = []
+# Finding the best alignment position can be done by getting the median
+# of the crab positions.
 
-for align_position in range(max(CRABS)):
-    fuel: int = sum(abs(crab - align_position) for crab in CRABS)
+align_position: int = int(median(CRABS))
 
-    FUEL_VALS.append((align_position, fuel))
+fuel: int = sum(abs(crab - align_position) for crab in CRABS)
 
-_, result = min(FUEL_VALS, key=lambda x: x[1])
-
-logger.success("Result: {}", result)
+logger.success("Result: {}", fuel)
