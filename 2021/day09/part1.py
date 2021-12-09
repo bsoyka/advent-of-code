@@ -14,21 +14,22 @@ result: int = 0
 
 for row, line in enumerate(MAP_LINES):
     for column, height in enumerate(line):
-        adjacent_heights = []
+        # Use a set for a tiny performance boost
+        adjacent_heights = set()
 
         if row > 0:
             # Not on the top row
-            adjacent_heights.append(MAP_LINES[row - 1][column])
+            adjacent_heights.add(MAP_LINES[row - 1][column])
         if row < MAP_HEIGHT - 1:
             # Not on the bottom row
-            adjacent_heights.append(MAP_LINES[row + 1][column])
+            adjacent_heights.add(MAP_LINES[row + 1][column])
 
         if column > 0:
             # Not on the left column
-            adjacent_heights.append(MAP_LINES[row][column - 1])
+            adjacent_heights.add(MAP_LINES[row][column - 1])
         if column < MAP_WIDTH - 1:
             # Not on the right column
-            adjacent_heights.append(MAP_LINES[row][column + 1])
+            adjacent_heights.add(MAP_LINES[row][column + 1])
 
         if all(
             height < adjacent_height for adjacent_height in adjacent_heights
