@@ -35,7 +35,7 @@ If you need help, join [Python Discord](https://discord.gg/python)!
 |   6   | :star: :star: | :star: :star: |                        |               |                        | :star: :star: | :star: :star: |
 |   7   |               |               |         :star:         |               |                        |    :star:     | :star: :star: |
 |   8   |               | :star: :star: |                        |               |     :star: :star:      |    :star:     |    :star:     |
-|   9   |               |               |                        |               |                        |    :star:     |               |
+|   9   |               |               |                        |               |                        |    :star:     |    :star:     |
 |  10   |               |               |                        |               |                        |               |               |
 |  11   |               |               |                        |               |                        |               |               |
 |  12   |               |               |                        |               |                        |    :star:     |               |
@@ -52,7 +52,7 @@ If you need help, join [Python Discord](https://discord.gg/python)!
 |  23   |               |               |                        |               |                        |               |               |
 |  24   |               |               |                        |               |                        |               |               |
 |  25   |               |               |                        |               |                        |               |               |
-|       | **13 :star:** | **7 :star:**  | **9 :star:, 1 :boom:** | **3 :star:**  | **7 :star:, 3 :boom:** | **19 :star:** | **15 :star:** |
+|       | **13 :star:** | **7 :star:**  | **9 :star:, 1 :boom:** | **3 :star:**  | **7 :star:, 3 :boom:** | **19 :star:** | **16 :star:** |
 
 ---
 
