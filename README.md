@@ -36,7 +36,7 @@ If you need help, join [Python Discord](https://discord.gg/python)!
 |   7   |               |               |         :star:         |               |                        |    :star:     | :star: :star: |
 |   8   |               | :star: :star: |                        |               |     :star: :star:      |    :star:     |    :star:     |
 |   9   |               |               |                        |               |                        |    :star:     |    :star:     |
-|  10   |               |               |                        |               |                        |               |               |
+|  10   |               |               |                        |               |                        |               |    :star:     |
 |  11   |               |               |                        |               |                        |               |               |
 |  12   |               |               |                        |               |                        |    :star:     |               |
 |  13   |               |               |                        |               |                        |               |               |
