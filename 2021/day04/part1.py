@@ -7,13 +7,9 @@ from loguru import logger
 
 DATA_LINES: list[str] = get_data(2021, 4, split=True)
 
-DATA_LINE_GROUPS = [
-    list(y) for x, y in groupby(DATA_LINES, key=lambda x: x != "") if x
-]
+DATA_LINE_GROUPS = [list(y) for x, y in groupby(DATA_LINES, key=lambda x: x != "") if x]
 
-CALL_NUMBERS = [
-    int(number) for number in DATA_LINE_GROUPS.pop(0)[0].split(",")
-]
+CALL_NUMBERS = [int(number) for number in DATA_LINE_GROUPS.pop(0)[0].split(",")]
 
 BINGO_CARDS = [BingoCard.from_data(data) for data in DATA_LINE_GROUPS]
 

@@ -20,5 +20,5 @@ def check_level(level: list[int]) -> bool:
     return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     load_and_check_levels(test_function=check_level)

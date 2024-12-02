@@ -28,9 +28,7 @@ for row, line in enumerate(MAP_LINES):
             # Not on the right column
             adjacent_heights.add(MAP_LINES[row][column + 1])
 
-        if all(
-            height < adjacent_height for adjacent_height in adjacent_heights
-        ):
+        if all(height < adjacent_height for adjacent_height in adjacent_heights):
             result += int(height) + 1
 
 logger.success("Result: {}", result)

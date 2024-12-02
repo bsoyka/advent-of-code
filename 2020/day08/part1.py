@@ -14,9 +14,7 @@ while True:
         break
 
     instruction_match = match(r"([a-z]{3}) ([+\-]\d+)", instructions[current])
-    command, value = instruction_match.group(1), int(
-        instruction_match.group(2)
-    )
+    command, value = instruction_match.group(1), int(instruction_match.group(2))
 
     run[current] = True
 

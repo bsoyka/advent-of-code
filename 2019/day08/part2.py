@@ -8,7 +8,7 @@ length = 6
 with (Path(__file__).parent / "input.txt").open() as f:
     start = f.readlines()[0].strip()
 pixels = width * length
-layers = [start[i: i + pixels] for i in range(0, len(start), pixels)]
+layers = [start[i : i + pixels] for i in range(0, len(start), pixels)]
 final_pixels = []
 for pixel_index in range(pixels):
     layer_pixel = "2"
@@ -20,8 +20,6 @@ for pixel_index in range(pixels):
             layer_pixel = "."
             break
     final_pixels.append(layer_pixel)
-final_chunks = [
-    final_pixels[i: i + width] for i in range(0, len(final_pixels), width)
-]
+final_chunks = [final_pixels[i : i + width] for i in range(0, len(final_pixels), width)]
 
 print(convert_6("\n".join("".join(chunk) for chunk in final_chunks)))

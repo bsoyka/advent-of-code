@@ -8,7 +8,7 @@ while True:
     for step in steps:
         if step[0] == "s":
             num = int(step[1])
-            dancers = dancers[-1 * num:] + dancers[: -1 * num]
+            dancers = dancers[-1 * num :] + dancers[: -1 * num]
         elif step[0] == "x":
             pos = list(map(int, step[1].split("/")))
             dancers[pos[0]], dancers[pos[1]] = dancers[pos[1]], dancers[pos[0]]
@@ -26,7 +26,7 @@ for _ in range(remaining):
     for step in steps:
         if step[0] == "s":
             num = int(step[1])
-            dancers = dancers[-1 * num:] + dancers[: -1 * num]
+            dancers = dancers[-1 * num :] + dancers[: -1 * num]
         elif step[0] == "x":
             pos = list(map(int, step[1].split("/")))
             dancers[pos[0]], dancers[pos[1]] = dancers[pos[1]], dancers[pos[0]]

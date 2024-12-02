@@ -37,8 +37,7 @@ class BingoCard:
             BingoCard: The created bingo card.
         """
         card_data = [
-            [BingoSpace(int(number)) for number in line.split()]
-            for line in data
+            [BingoSpace(int(number)) for number in line.split()] for line in data
         ]
 
         return cls(card_data)
@@ -65,18 +64,13 @@ class BingoCard:
             if all(space.marked for space in row):
                 return True
 
-        return any(
-            all(space.marked for space in column) for column in zip(*self.data)
-        )
+        return any(all(space.marked for space in column) for column in zip(*self.data))
 
     @property
     def unmarked_sum(self) -> int:
         """int: The sum of the unmarked spaces on the bingo card."""
         return sum(
-            space.number
-            for row in self.data
-            for space in row
-            if not space.marked
+            space.number for row in self.data for space in row if not space.marked
         )
 
 

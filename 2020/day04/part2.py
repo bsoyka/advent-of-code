@@ -6,9 +6,7 @@ from loguru import logger
 
 PASSPORT_LINES = get_data(2020, 4, split=True)
 PASSPORTS = [
-    " ".join(list(y))
-    for x, y in groupby(PASSPORT_LINES, key=lambda x: x != "")
-    if x
+    " ".join(list(y)) for x, y in groupby(PASSPORT_LINES, key=lambda x: x != "") if x
 ]
 logger.debug("Loaded passports data")
 
@@ -25,9 +23,7 @@ for passport in PASSPORTS:
         continue
 
     # Skip if any year is invalid
-    if any(
-        not match(r"^\d{4}$", fields[field]) for field in ["byr", "iyr", "eyr"]
-    ):
+    if any(not match(r"^\d{4}$", fields[field]) for field in ["byr", "iyr", "eyr"]):
         continue
 
     # Check all year values
@@ -43,9 +39,7 @@ for passport in PASSPORTS:
 
     # Check the height with a regex, get the number and unit
     if not (
-        height_match := match(
-            r"^(?P<value>\d{2,3})(?P<unit>in|cm)$", fields["hgt"]
-        )
+        height_match := match(r"^(?P<value>\d{2,3})(?P<unit>in|cm)$", fields["hgt"])
     ):
         continue
 

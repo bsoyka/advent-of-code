@@ -4,8 +4,7 @@ from typing import Callable
 from loguru import logger
 
 
-def load_and_check_levels(*, test_function: Callable[
-    [list[int]], bool]) -> None:
+def load_and_check_levels(*, test_function: Callable[[list[int]], bool]) -> None:
     """Runs the main program, loading levels from a file and printing a result.
 
     Args:

@@ -12,8 +12,7 @@ def smallest_perimeter(length: int, width: int, height: int) -> int:
     """
 
     return (
-        sorted([length, width, height])[0] * 2
-        + sorted([length, width, height])[1] * 2
+        sorted([length, width, height])[0] * 2 + sorted([length, width, height])[1] * 2
     )
 
 
@@ -29,9 +28,7 @@ def smallest_side(length: int, width: int, height: int) -> int:
         int: The area of the smallest side of the gift
     """
 
-    return (
-        sorted([length, width, height])[0] * sorted([length, width, height])[1]
-    )
+    return sorted([length, width, height])[0] * sorted([length, width, height])[1]
 
 
 def surface_area(length: int, width: int, height: int) -> int:

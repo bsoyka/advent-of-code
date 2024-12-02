@@ -11,9 +11,7 @@ TOTAL_DAYS = 256
 # I opted not to reuse my initial object-oriented approach from part 1
 # due to the incredible amount of recursion it would take for 256 days.
 
-current_fish: dict[int, int] = dict(
-    Counter(get_data(2021, 6, func=int, split=","))
-)
+current_fish: dict[int, int] = dict(Counter(get_data(2021, 6, func=int, split=",")))
 logger.debug("Loaded initial fish data")
 
 for _ in range(TOTAL_DAYS):

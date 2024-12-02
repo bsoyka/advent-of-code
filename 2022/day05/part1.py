@@ -11,7 +11,7 @@ logger.debug("Loaded input data")
 separator_index = inputs.index("")
 crates_input, instructions = (
     inputs[:separator_index],
-    inputs[separator_index + 1:],
+    inputs[separator_index + 1 :],
 )
 
 # TODO: Automate stack parsing
@@ -30,9 +30,7 @@ stacks = [
 ]
 
 for instruction in instructions:
-    count, start, end = map(
-        int, INSTRUCTION_NUMBERS.match(instruction).groups()
-    )
+    count, start, end = map(int, INSTRUCTION_NUMBERS.match(instruction).groups())
 
     for _ in range(count):
         crate = stacks[start - 1].pop()

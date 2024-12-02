@@ -7,9 +7,7 @@ data: str = get_data(2022, 6)
 logger.debug("Loaded input data")
 
 for index in range(MARKER_LENGTH - 1, len(data)):
-    marker = data[
-             index - MARKER_LENGTH + 1: index + 1
-             ]  # Get last few characters
+    marker = data[index - MARKER_LENGTH + 1 : index + 1]  # Get last few characters
 
     # If all characters in the marker are unique
     if len(set(marker)) == MARKER_LENGTH:

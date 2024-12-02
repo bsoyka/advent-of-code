@@ -5,6 +5,4 @@ passphrases = [
     for line in get_data(year=2017, day=4).splitlines()
 ]
 
-print(
-    sum(len(passphrase) == len(set(passphrase)) for passphrase in passphrases)
-)
+print(sum(len(passphrase) == len(set(passphrase)) for passphrase in passphrases))

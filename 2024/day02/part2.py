@@ -21,7 +21,7 @@ def check_level(level: list[int], *, recursive: bool = False) -> bool:
     if not recursive:
         # Attempt to remove single values to make the level safe.
         for exclude_index in range(len(level)):
-            test_level = level[:exclude_index] + level[exclude_index + 1:]
+            test_level = level[:exclude_index] + level[exclude_index + 1 :]
             if check_level(test_level, recursive=True):
                 return True
 
@@ -31,5 +31,5 @@ def check_level(level: list[int], *, recursive: bool = False) -> bool:
     return False
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     load_and_check_levels(test_function=check_level)

@@ -51,17 +51,13 @@ class Line2D:
         """
         if self.start.x == self.end.x:
             # The line is vertical.
-            min_y, max_y = min(self.start.y, self.end.y), max(
-                self.start.y, self.end.y
-            )
+            min_y, max_y = min(self.start.y, self.end.y), max(self.start.y, self.end.y)
 
             return [Point2D(self.start.x, y) for y in range(min_y, max_y + 1)]
 
         if self.start.y == self.end.y:
             # The line is horizontal.
-            min_x, max_x = min(self.start.x, self.end.x), max(
-                self.start.x, self.end.x
-            )
+            min_x, max_x = min(self.start.x, self.end.x), max(self.start.x, self.end.x)
 
             return [Point2D(x, self.start.y) for x in range(min_x, max_x + 1)]
 
@@ -80,9 +76,7 @@ class Line2D:
                 min_y, max_y = self.start.y, self.end.y
 
             return [
-                Point2D(
-                    x, min_y + (x - min_x) * (max_y - min_y) // (max_x - min_x)
-                )
+                Point2D(x, min_y + (x - min_x) * (max_y - min_y) // (max_x - min_x))
                 for x in range(min_x, max_x + 1)
             ]
 
