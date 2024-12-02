@@ -1,8 +1,5 @@
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 SLOPES = [(1, 1), (3, 1), (5, 1), (7, 1), (1, 2)]
 

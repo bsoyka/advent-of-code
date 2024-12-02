@@ -1,11 +1,7 @@
-from pathlib import Path
 from string import ascii_letters
 
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 # 1-26 for a-z, 27-52 for A-Z
 PRIORITIES = {

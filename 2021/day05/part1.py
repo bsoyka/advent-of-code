@@ -1,12 +1,9 @@
 from collections import defaultdict
 
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
 from bsoyka_aoc_utils.lines import Line2D
 from bsoyka_aoc_utils.points import Point2D
+from loguru import logger
 
 LINES_DATA: list[str] = get_data(2021, 5, split=True)
 

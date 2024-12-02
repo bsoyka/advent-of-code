@@ -2,7 +2,6 @@ import sys
 from hashlib import md5
 from re import match
 
-# Input data loading
 from aocd import get_data
 
 key = get_data(year=2015, day=4)

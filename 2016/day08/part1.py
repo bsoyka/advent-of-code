@@ -1,8 +1,6 @@
 from re import findall
 
-# Input data loading
 from aocd import get_data
-
 from numpy import count_nonzero, roll, zeros
 
 instructions = get_data(year=2016, day=8).splitlines()

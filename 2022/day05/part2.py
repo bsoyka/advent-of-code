@@ -1,11 +1,7 @@
 import re
-from pathlib import Path
 
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 INSTRUCTION_NUMBERS = re.compile(r"^move (\d+) from (\d+) to (\d+)$")
 
@@ -15,7 +11,7 @@ logger.debug("Loaded input data")
 separator_index = inputs.index("")
 crates_input, instructions = (
     inputs[:separator_index],
-    inputs[separator_index + 1 :],
+    inputs[separator_index + 1:],
 )
 
 # TODO: Automate stack parsing

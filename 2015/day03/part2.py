@@ -1,6 +1,5 @@
 from typing import List
 
-# Input data loading
 from aocd import get_data
 
 moves = get_data(year=2015, day=3)

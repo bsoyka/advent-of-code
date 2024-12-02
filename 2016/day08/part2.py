@@ -1,9 +1,7 @@
 from re import findall
 
-# Input data loading
-from aocd import get_data
-
 from advent_of_code_ocr import convert_6
+from aocd import get_data
 from numpy import roll, zeros
 
 instructions = get_data(year=2016, day=8).splitlines()

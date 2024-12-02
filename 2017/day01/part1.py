@@ -1,4 +1,3 @@
-# Input data loading
 from aocd import get_data
 
 start = get_data(year=2017, day=1)

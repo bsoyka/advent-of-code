@@ -1,10 +1,7 @@
 from __future__ import annotations
 
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 DAYS_TO_MULTIPLY = 7
 NEW_FISH_TIMER = 8

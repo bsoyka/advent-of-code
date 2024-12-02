@@ -1,7 +1,6 @@
-from pathlib import Path
 from part1 import check_level as check_level_simple
-from part1 import load_and_check_levels
-from loguru import logger
+from utils import load_and_check_levels
+
 
 def check_level(level: list[int], *, recursive: bool = False) -> bool:
     """Checks whether a level is strictly increasing or decreasing, including by
@@ -30,6 +29,7 @@ def check_level(level: list[int], *, recursive: bool = False) -> bool:
     # - The function was called recursively and the level isn't safe.
     # - Removing single values didn't make the level safe.
     return False
+
 
 if __name__ == '__main__':
     load_and_check_levels(test_function=check_level)

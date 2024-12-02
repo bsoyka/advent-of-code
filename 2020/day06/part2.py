@@ -1,11 +1,8 @@
 from itertools import groupby
 from typing import List
 
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 CUSTOMS_LINES: List[str] = get_data(2020, 6, split=True)
 CUSTOMS_FORMS = [

@@ -2,7 +2,6 @@
 
 from typing import Any, Callable, Optional
 
-# Input data loading
 from aocd import get_data as _get_data
 
 __all__ = ("get_data",)

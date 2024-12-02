@@ -1,8 +1,5 @@
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 # This solution is a bit slow, but it still gets the correct solution in
 # a fairly reasonable amount of time. (Took about 19 seconds with my

@@ -2,7 +2,6 @@ import re
 from hashlib import md5
 from typing import List, Optional
 
-# Input data loading
 from aocd import get_data
 
 prefix = get_data(year=2016, day=5)

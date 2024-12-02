@@ -1,10 +1,7 @@
 from typing import Tuple
 
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 
 def process_line(line: str) -> Tuple[int, int, str, str]:

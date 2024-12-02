@@ -1,9 +1,7 @@
 from typing import List, Tuple
 
-# Input data loading
 from aocd import get_data
 
-# Utilities for this day
 from utils import smallest_perimeter
 
 gifts: List[Tuple[int, int, int]] = [

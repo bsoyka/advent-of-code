@@ -1,6 +1,5 @@
 from re import findall
 
-# Input data loading
 from aocd import get_data
 
 triangles = [

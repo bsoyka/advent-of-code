@@ -1,9 +1,6 @@
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
 from bsoyka_aoc_utils.rps import Move, get_result
+from loguru import logger
 
 rounds: list[str] = get_data(2022, 2, split=True)
 logger.debug("Loaded rounds list")

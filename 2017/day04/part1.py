@@ -1,4 +1,3 @@
-# Input data loading
 from aocd import get_data
 
 passphrases = [

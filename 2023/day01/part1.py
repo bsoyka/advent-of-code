@@ -1,8 +1,5 @@
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 CALIBRATION_LINES: list[str] = get_data(2023, 1, split=True)
 logger.debug("Loaded calibration lines")

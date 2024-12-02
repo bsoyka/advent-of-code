@@ -1,8 +1,5 @@
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 MAP_LINES = get_data(2021, 9, split=True)
 logger.debug("Loaded map data")

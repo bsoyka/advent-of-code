@@ -1,10 +1,6 @@
-# Simple logging
-from loguru import logger
-
 import regex as re
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 DIGIT_WORDS = {
     "zero": "0",

@@ -1,11 +1,8 @@
 from itertools import cycle
 from re import match
 
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 BOARD_SIZE = 10
 DIE_SIDES = 100

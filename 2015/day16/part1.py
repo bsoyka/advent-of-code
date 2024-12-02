@@ -1,7 +1,6 @@
 import sys
 from re import match
 
-# Input data loading
 from aocd import get_data
 
 sue_list = get_data(year=2015, day=16).splitlines()

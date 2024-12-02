@@ -1,6 +1,5 @@
 from collections import Counter
 
-# Input data loading
 from aocd import get_data
 
 lines = [line.strip() for line in get_data(year=2016, day=6).splitlines()]

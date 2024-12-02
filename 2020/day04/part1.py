@@ -1,10 +1,7 @@
 from itertools import groupby
 
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 PASSPORT_LINES = get_data(2020, 4, split=True)
 PASSPORTS = [

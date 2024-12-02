@@ -1,10 +1,7 @@
 from typing import List
 
-# Simple logging
-from loguru import logger
-
-# Personal utilities
 from bsoyka_aoc_utils import get_data
+from loguru import logger
 
 DIAGNOSTICS: List[str] = get_data(2021, 3, split=True)
 logger.debug("Loaded diagnostics list")
