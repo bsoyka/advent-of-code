@@ -5,9 +5,7 @@ from bsoyka_aoc_utils import get_data
 from loguru import logger
 
 CUSTOMS_LINES: List[str] = get_data(2020, 6, split=True)
-CUSTOMS_FORMS = [
-    list(y) for x, y in groupby(CUSTOMS_LINES, key=lambda x: x != "") if x
-]
+CUSTOMS_FORMS = [list(y) for x, y in groupby(CUSTOMS_LINES, key=lambda x: x != "") if x]
 logger.debug("Loaded customs forms data")
 
 GROUPS_ALL = [set(group[0]).intersection(*group) for group in CUSTOMS_FORMS]

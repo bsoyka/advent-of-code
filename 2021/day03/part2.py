@@ -28,9 +28,7 @@ for bit_index in range(NUMBER_LENGTH):
 
         # Remove the ones that don't match this most common bit
         oxygen_possible = [
-            entry
-            for entry in oxygen_possible
-            if entry[bit_index] == MOST_COMMON
+            entry for entry in oxygen_possible if entry[bit_index] == MOST_COMMON
         ]
 
     if len(co2_possible) > 1:

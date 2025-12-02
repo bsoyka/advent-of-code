@@ -3,7 +3,7 @@ from loguru import logger
 
 from utils import CubeGame
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     GAME_LINES: list[str] = get_data(2023, 2, split=True)
     logger.debug("Loaded game lines")
 
@@ -13,4 +13,4 @@ if __name__ == '__main__':
         if game.is_possible:
             result += game.game_id
 
-    logger.success("Result: {}",result)
+    logger.success("Result: {}", result)

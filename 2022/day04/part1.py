@@ -14,9 +14,7 @@ for pair in pairs:
     start1, end1, start2, end2 = map(int, PAIR_NUMBERS.match(pair).groups())
 
     # If either range fully contains the other
-    if (start1 <= start2 and end1 >= end2) or (
-        start2 <= start1 and end2 >= end1
-    ):
+    if (start1 <= start2 and end1 >= end2) or (start2 <= start1 and end2 >= end1):
         overlapping += 1
         print(pair)
 

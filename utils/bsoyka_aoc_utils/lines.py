@@ -63,7 +63,6 @@ class Line2D:
 
         # The line is a 45 degrees diagonal.
         if include_diagonals:
-
             if self.start.x > self.end.x:
                 # The line is going from right to left.
 

@@ -11,8 +11,16 @@ RANGES = INPUT_TEXT.split(",")
 
 
 def is_number_repeat(num: int) -> bool:
+    """Determines whether a number is a smaller number concatenated with itself.
+
+    Args:
+        num: The number to test.
+
+    Returns: Whether the number is "invalid" by the problem criteria.
+    """
     num_str = str(num)
 
+    # Odd-length numbers cannot be a substring repeated twice.
     if len(num_str) % 2:
         return False
 

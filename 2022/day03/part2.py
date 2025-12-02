@@ -13,7 +13,7 @@ rucksacks: list[str] = get_data(2022, 3, split=True)
 logger.debug("Loaded rucksack list")
 
 # Divide into groups of 3
-groups = [rucksacks[i: i + 3] for i in range(0, len(rucksacks), 3)]
+groups = [rucksacks[i : i + 3] for i in range(0, len(rucksacks), 3)]
 logger.debug("Divided rucksacks into groups")
 
 result: int = 0
@@ -21,9 +21,7 @@ result: int = 0
 for group in groups:
     one, two, three = group
 
-    shared = (
-        set(one) & set(two) & set(three)
-    ).pop()  # Get the only shared character
+    shared = (set(one) & set(two) & set(three)).pop()  # Get the only shared character
     priority = PRIORITIES[shared]
 
     result += priority

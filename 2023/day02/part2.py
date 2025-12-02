@@ -5,7 +5,7 @@ from loguru import logger
 
 from utils import CubeGame
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     GAME_LINES: list[str] = get_data(2023, 2, split=True)
     logger.debug("Loaded game lines")
 
@@ -14,4 +14,4 @@ if __name__ == '__main__':
         game = CubeGame(game_string)
         result += prod(game.minimum_cubes_by_color.values())
 
-    logger.success("Result: {}",result)
+    logger.success("Result: {}", result)

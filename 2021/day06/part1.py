@@ -39,9 +39,7 @@ class Lanternfish:
         return False
 
 
-current_fish: list[Lanternfish] = get_data(
-    2021, 6, func=Lanternfish, split=","
-)
+current_fish: list[Lanternfish] = get_data(2021, 6, func=Lanternfish, split=",")
 logger.debug("Loaded initial fish data")
 
 for _ in range(TOTAL_DAYS):

@@ -5,9 +5,7 @@ from loguru import logger
 
 PASSPORT_LINES = get_data(2020, 4, split=True)
 PASSPORTS = [
-    " ".join(list(y))
-    for x, y in groupby(PASSPORT_LINES, key=lambda x: x != "")
-    if x
+    " ".join(list(y)) for x, y in groupby(PASSPORT_LINES, key=lambda x: x != "") if x
 ]
 logger.debug("Loaded passports data")
 
