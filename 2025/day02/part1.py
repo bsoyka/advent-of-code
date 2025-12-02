@@ -20,10 +20,6 @@ def is_number_repeat(num: int) -> bool:
     """
     num_str = str(num)
 
-    # Odd-length numbers cannot be a substring repeated twice.
-    if len(num_str) % 2:
-        return False
-
     half_point = len(num_str) // 2
 
     first_half, second_half = num_str[:half_point], num_str[half_point:]
