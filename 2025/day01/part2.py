@@ -39,7 +39,6 @@ result = 0
 
 for instruction in INPUT_TEXT:
     direction, distance = instruction[0], int(instruction[1:])
-    logger.debug(instruction.strip())
 
     location, zeroes = complete_move(location, direction, distance)
 
