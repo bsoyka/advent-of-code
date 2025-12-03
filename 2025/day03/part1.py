@@ -1,4 +1,4 @@
-from itertools import permutations, combinations
+from itertools import combinations
 from pathlib import Path
 from typing import Sequence
 
