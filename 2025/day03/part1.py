@@ -16,6 +16,10 @@ def max_joltage(bank_values: Sequence[int]) -> int:
     For Part 1, this is done with brute force, gathering all possible pairs of
     batteries and finding the max joltage from there.
 
+    The algorithm used for Part 2 can easily be adapted to work for this part,
+    but it's a little more complex and would only result in a miniscule improvement
+    in execution time (yet observable; about 1.17 times faster).
+
     Args:
         bank_values: A sequence of numbers representing the batteries in the bank.
 
