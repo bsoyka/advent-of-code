@@ -11,10 +11,11 @@ dependencies = [
     "regex>=2025.11.3",
 ]
 
-[tool.uv.workspace]
-members = [
-    "utils",
-]
-
 [tool.uv.sources]
-bsoyka-aoc-utils = { workspace = true, editable = true }
+bsoyka-aoc-utils = { path = "utils", editable = true }
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.5.0",
+    "ruff>=0.14.7",
+]

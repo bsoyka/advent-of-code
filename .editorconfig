@@ -15,3 +15,6 @@ indent_size = 2
 
 [{*.md,*.markdown}]
 trim_trailing_whitespace = false
+
+[**/input.txt]
+insert_final_newline = false
