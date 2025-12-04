@@ -1,0 +1,9 @@
+[project]
+name = "bsoyka-aoc-utils"
+version = "0.1.0"
+description = "Shared utilities for my personal Advent of Code solutions"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "advent-of-code-data>=2.1.0",
+]

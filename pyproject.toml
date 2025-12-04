@@ -1,0 +1,20 @@
+[project]
+name = "advent-of-code"
+version = "0.1.0"
+description = "Personal solutions to Advent of Code problems"
+readme = "README.md"
+requires-python = ">=3.14"
+dependencies = [
+    "advent-of-code-ocr>=1.1.0",
+    "bsoyka-aoc-utils",
+    "loguru>=0.7.3",
+    "regex>=2025.11.3",
+]
+
+[tool.uv.workspace]
+members = [
+    "utils",
+]
+
+[tool.uv.sources]
+bsoyka-aoc-utils = { workspace = true, editable = true }
