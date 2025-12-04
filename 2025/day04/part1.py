@@ -75,7 +75,7 @@ for row_index, row in enumerate(INPUT_ROWS):
             continue
 
         adjacent_cells = adjacent_positions(row_index, col_index)
-        adjacent_forklifts = forklifts_in_positions(adjacent_cells)
+        adjacent_forklifts = forklifts_in_positions(adjacent_cells, INPUT_ROWS)
 
         if adjacent_forklifts < 4:
             result += 1
