@@ -25,12 +25,9 @@ def is_item_in_any_range(item_id: int, ranges: Iterable[FreshRange]) -> bool:
 
 fresh_ranges = list(map(FreshRange.from_input_line, RAW_FRESH_RANGES.split("\n")))
 available_ids = map(int, RAW_AVAILABLE_IDS.split("\n"))
-result = 0
 
-logger.success(
-    "Result: {}",
-    sum(
-        is_item_in_any_range(available_id, fresh_ranges)
-        for available_id in available_ids
-    ),
+result = sum(
+    is_item_in_any_range(available_id, fresh_ranges) for available_id in available_ids
 )
+
+logger.success("Result: {}", result)
