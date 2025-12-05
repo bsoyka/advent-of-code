@@ -20,7 +20,7 @@ def is_item_in_any_range(item_id: int, ranges: Iterable[FreshRange]) -> bool:
 
     Returns: Whether the item ID is in at least one of the given ranges.
     """
-    return any(test_range.contains(item_id) for test_range in ranges)
+    return any(item_id in test_range for test_range in ranges)
 
 
 fresh_ranges = list(map(FreshRange.from_input_line, RAW_FRESH_RANGES.split("\n")))

@@ -23,7 +23,7 @@ class FreshRange:
         start, end = map(int, line.split("-"))
         return cls(start, end)
 
-    def contains(self, item_id):
+    def __contains__(self, item_id):
         """Check whether the range contains an item.
 
         Args:
