@@ -10,7 +10,18 @@ with (Path(__file__).parent / "input.txt").open() as f:
 logger.debug("Loaded input data")
 
 
-def add_range(new_line: str, existing_ranges: list[FreshRange]):
+def add_range(new_line: str, existing_ranges: list[FreshRange]) -> None:
+    """Add an item ID range from input to the list of unique ranges.
+
+    This modifies the given list in place, adding the new range in sorted order and
+    reconciling any overlaps if needed.
+
+    Args:
+        new_line: The new line of input to process, as given in the input file.
+        existing_ranges: The current list of unique ID ranges.
+
+    Returns: None
+    """
     new_range = FreshRange.from_input_line(new_line)
 
     merged: list[FreshRange] = []
@@ -50,5 +61,5 @@ for line in RAW_INPUT:
     add_range(line.strip(), unique_fresh_ranges)
 
 logger.success(
-    "Result: {}", sum(fresh_range.size for fresh_range in unique_fresh_ranges)
+    "Result: {}", sum(len(fresh_range) for fresh_range in unique_fresh_ranges)
 )

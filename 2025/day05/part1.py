@@ -12,6 +12,14 @@ logger.debug("Loaded input data")
 
 
 def is_item_in_any_range(item_id: int, ranges: Iterable[FreshRange]) -> bool:
+    """Check if an item is in any of a collection of ranges.
+
+    Args:
+        item_id: The item ID to check.
+        ranges: An iterable of ranges.
+
+    Returns: Whether the item ID is in at least one of the given ranges.
+    """
     return any(test_range.contains(item_id) for test_range in ranges)
 
 
