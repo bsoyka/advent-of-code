@@ -1,26 +1,15 @@
 from pathlib import Path
 
 from loguru import logger
-from math import prod
 
-with (Path(__file__).parent / "input.txt").open() as f:
-    INPUT_LINES = [line.rstrip("\n") for line in f]
-
-
-def solve_problem(input_list: list[str]) -> int:
-    numbers = map(int, input_list[:-1])
-
-    match input_list[-1]:
-        case "+":
-            return sum(numbers)
-        case "*":
-            return prod(numbers)
+from shared import solve_problem
 
 
 def is_separator_index(col_index: int, test_grid: list[str]) -> bool:
     return all(line[col_index] == " " for line in test_grid)
 
 
+INPUT_LINES = (Path(__file__).parent / "input.txt").read_text().splitlines()
 width = max(len(line) for line in INPUT_LINES)
 grid = [line.ljust(width) for line in INPUT_LINES]
 
