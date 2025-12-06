@@ -1,4 +1,5 @@
 from pathlib import Path
+from typing import cast
 
 from loguru import logger
 
@@ -19,7 +20,7 @@ current_op: str | None = None
 
 for col in range(width - 1, -1, -1):
     if is_separator_index(col, grid):
-        raw_problems.append(current_numbers + [current_op])
+        raw_problems.append(cast(list[str], current_numbers + [current_op]))
         current_numbers = []
         current_op = None
         continue
@@ -31,7 +32,7 @@ for col in range(width - 1, -1, -1):
     current_numbers.append("".join(digits))
 
 # One more time for the final (leftmost) problem
-raw_problems.append(current_numbers + [current_op])
+raw_problems.append(cast(list[str], current_numbers + [current_op]))
 
 result = sum(solve_problem(p) for p in raw_problems)
 

@@ -19,3 +19,5 @@ def solve_problem(input_list: list[str]) -> int:
             return sum(numbers)
         case "*":
             return prod(numbers)
+
+    raise ValueError("invalid operator specified")
