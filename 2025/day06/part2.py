@@ -7,6 +7,14 @@ from shared import solve_problem
 
 
 def is_separator_index(col_index: int, test_grid: list[str]) -> bool:
+    """Check whether a given index points to a separator column in a grid.
+
+    Args:
+        col_index: The column index to check.
+        test_grid: The grid to check, given as a list of row strings.
+
+    Returns: Whether the column at the given index is entirely space characters.
+    """
     return all(line[col_index] == " " for line in test_grid)
 
 
