@@ -1,4 +1,5 @@
 from pathlib import Path
+
 from loguru import logger
 
 manifold_rows = (Path(__file__).parent / "input.txt").read_text().splitlines()
