@@ -1,7 +1,6 @@
 from itertools import combinations
-from pathlib import Path
-
 from math import sqrt
+from pathlib import Path
 
 
 def calculate_distance(junction1: str, junction2: str) -> float:
@@ -26,13 +25,30 @@ def calculate_distance(junction1: str, junction2: str) -> float:
     return sqrt(sum((j1x - j2x) ** 2 for j1x, j2x in dimension_coord_pairs))
 
 
-INPUT_LINES = (Path(__file__).parent / "input.txt").read_text().splitlines()
+def pair_junctions_by_distance(
+    junctions: list[str], limit: int = 1000
+) -> list[tuple[float, str, str]]:
+    """Makes pairs of junctions in ascending order by the distance between them.
 
-junction_pairs = combinations(INPUT_LINES, 2)
-distance_results = [(calculate_distance(j1, j2), j1, j2) for j1, j2 in junction_pairs]
+    Args:
+        junctions: The list of junctions to consider.
+        limit: The maximum number of pairs to return.
 
-distance_results = sorted(distance_results)[:1000]
+    Returns: A list of tuples of (distance, junction1, junction2).
+    """
+    junction_pairs = combinations(junctions, 2)
+    distance_results = [
+        (calculate_distance(j1, j2), j1, j2) for j1, j2 in junction_pairs
+    ]
 
-# TODO: use list of distances and pairs to connect circuits
-# TODO: find 3 largest circuits
-# TODO: multiply sizes of 3 largest circuits to get result
+    return sorted(distance_results)[:limit]
+
+
+if __name__ == "__main__":
+    INPUT_LINES = (Path(__file__).parent / "input.txt").read_text().splitlines()
+
+    junctions_to_link = pair_junctions_by_distance(INPUT_LINES, 1000)
+
+    # TODO: use list of distances and pairs to connect circuits
+    # TODO: find 3 largest circuits
+    # TODO: multiply sizes of 3 largest circuits to get result
