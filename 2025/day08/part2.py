@@ -1,33 +1,8 @@
-from itertools import combinations
 from pathlib import Path
 from sys import exit
 
 from loguru import logger
-from part1 import calculate_distance, find_junction_in_circuit_list
-
-
-def pair_junctions_by_distance(
-    junctions: list[str], limit: int | None = 1000
-) -> list[tuple[float, str, str]]:
-    """Makes pairs of junctions in ascending order by the distance between them.
-
-    Args:
-        junctions: The list of junctions to consider.
-        limit: The maximum number of pairs to return.
-
-    Returns: A list of tuples of (distance, junction1, junction2).
-    """
-    junction_pairs = combinations(junctions, 2)
-    distance_results = [
-        (calculate_distance(j1, j2), j1, j2) for j1, j2 in junction_pairs
-    ]
-
-    return (
-        sorted(distance_results)[:limit]
-        if limit is not None
-        else sorted(distance_results)
-    )
-
+from shared import find_junction_in_circuit_list, pair_junctions_by_distance
 
 if __name__ == "__main__":
     INPUT_LINES = (Path(__file__).parent / "input.txt").read_text().splitlines()

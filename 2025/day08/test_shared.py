@@ -1,9 +1,9 @@
-from part1 import (
-    calculate_distance,
+from pytest import approx, mark
+from shared import (
+    _calculate_distance,
     find_junction_in_circuit_list,
     pair_junctions_by_distance,
 )
-from pytest import approx, mark
 
 EXAMPLE_INPUT = """162,817,812
 57,618,57
@@ -30,7 +30,7 @@ EXAMPLE_CIRCUITS = [["a"], ["b", "c", "d"], ["e", "f"]]
 
 
 def test_calculate_distance():
-    assert calculate_distance("162,817,812", "425,690,689") == approx(316.902)
+    assert _calculate_distance("162,817,812", "425,690,689") == approx(316.902)
 
 
 def test_pair_junctions_by_distance():
