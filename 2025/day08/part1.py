@@ -1,6 +1,8 @@
 from itertools import combinations
-from math import sqrt
+from math import prod, sqrt
 from pathlib import Path
+
+from loguru import logger
 
 
 def calculate_distance(junction1: str, junction2: str) -> float:
@@ -44,11 +46,48 @@ def pair_junctions_by_distance(
     return sorted(distance_results)[:limit]
 
 
+def find_junction_in_circuit_list(junction: str, circuits: list[set[str]]) -> int:
+    """Find the circuit containing a given junction in a list of circuits.
+
+    Args:
+        junction: The junction to search for.
+        circuits: The list of circuits to search.
+
+    Returns: The index of the circuit containing the given junction.
+
+    Raises:
+        ValueError: The junction was not found in the list of circuits.
+    """
+    for i, circuit in enumerate(circuits):
+        if junction in circuit:
+            return i
+
+    raise ValueError
+
+
 if __name__ == "__main__":
     INPUT_LINES = (Path(__file__).parent / "input.txt").read_text().splitlines()
-
+    circuits = [
+        {
+            j,
+        }
+        for j in INPUT_LINES
+    ]
     junctions_to_link = pair_junctions_by_distance(INPUT_LINES, 1000)
 
-    # TODO: use list of distances and pairs to connect circuits
-    # TODO: find 3 largest circuits
-    # TODO: multiply sizes of 3 largest circuits to get result
+    for _, junction1, junction2 in junctions_to_link:
+        j1_circuit_index = find_junction_in_circuit_list(junction1, circuits)
+        j2_circuit_index = find_junction_in_circuit_list(junction2, circuits)
+
+        j1_circuit, j2_circuit = circuits[j1_circuit_index], circuits[j2_circuit_index]
+
+        joined_circuit = j1_circuit.union(j2_circuit)
+
+        for i in sorted({j1_circuit_index, j2_circuit_index}, reverse=True):
+            # Pop starting with the latest to avoid the earlier element shifting
+            circuits.pop(i)
+
+        circuits.append(joined_circuit)
+
+    largest_sizes = sorted((len(c) for c in circuits), reverse=True)[:3]
+    logger.success("Result: {}", prod(largest_sizes))
