@@ -18,7 +18,8 @@ class FreshRange:
         Args:
             line: A line of input from the file.
 
-        Returns: A range object.
+        Returns:
+            A range object.
         """
         start, end = map(int, line.split("-"))
         return cls(start, end)
@@ -29,13 +30,15 @@ class FreshRange:
         Args:
             item_id: The ID of the item to check.
 
-        Returns: Whether the given item is in the ID range.
+        Returns:
+            Whether the given item is in the ID range.
         """
         return self.start <= item_id <= self.end
 
     def __len__(self):
         """Calculate the number of IDs within the range.
 
-        Returns: The size of the range.
+        Returns:
+            The size of the range.
         """
         return self.end - self.start + 1

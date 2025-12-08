@@ -23,7 +23,8 @@ def max_joltage(bank_values: Sequence[int]) -> int:
     Args:
         bank_values: A sequence of numbers representing the batteries in the bank.
 
-    Returns: The total possible joltage from the bank.
+    Returns:
+        The total possible joltage from the bank.
     """
     # Get all possible pairs of batteries
     perms = set(combinations(bank_values, 2))

@@ -27,7 +27,8 @@ def max_joltage(bank_values: Sequence[int], batteries_to_use: int = 12) -> int:
         bank_values: A sequence of numbers representing the batteries in the bank.
         batteries_to_use: The exact number of battery digits to select.
 
-    Returns: The total possible joltage from the bank.
+    Returns:
+        The total possible joltage from the bank.
     """
     drops_allowed = len(bank_values) - batteries_to_use
     stack: list[int] = []

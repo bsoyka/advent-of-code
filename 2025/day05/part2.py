@@ -1,7 +1,6 @@
 from pathlib import Path
 
 from loguru import logger
-
 from shared import FreshRange
 
 with (Path(__file__).parent / "input.txt").open() as f:
@@ -20,7 +19,8 @@ def add_range(new_line: str, existing_ranges: list[FreshRange]) -> None:
         new_line: The new line of input to process, as given in the input file.
         existing_ranges: The current list of unique ID ranges.
 
-    Returns: None
+    Returns:
+        None
     """
     new_range = FreshRange.from_input_line(new_line)
 

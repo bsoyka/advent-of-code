@@ -2,7 +2,6 @@ from pathlib import Path
 from typing import Iterable
 
 from loguru import logger
-
 from shared import FreshRange
 
 with (Path(__file__).parent / "input.txt").open() as f:
@@ -18,7 +17,8 @@ def is_item_in_any_range(item_id: int, ranges: Iterable[FreshRange]) -> bool:
         item_id: The item ID to check.
         ranges: An iterable of ranges.
 
-    Returns: Whether the item ID is in at least one of the given ranges.
+    Returns:
+        Whether the item ID is in at least one of the given ranges.
     """
     return any(item_id in test_range for test_range in ranges)
 

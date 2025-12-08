@@ -6,12 +6,7 @@ from shared import find_junction_in_circuit_list, pair_junctions_by_distance
 
 if __name__ == "__main__":
     INPUT_LINES = (Path(__file__).parent / "input.txt").read_text().splitlines()
-    circuits = [
-        {
-            j,
-        }
-        for j in INPUT_LINES
-    ]
+    circuits = [{j} for j in INPUT_LINES]
     junctions_to_link = pair_junctions_by_distance(INPUT_LINES, None)
 
     for _, junction1, junction2 in junctions_to_link:

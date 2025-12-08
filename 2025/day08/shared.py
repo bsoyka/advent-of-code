@@ -14,7 +14,8 @@ def _calculate_distance(junction1: str, junction2: str) -> float:
         junction1: The first junction, given in the input format.
         junction2: The first junction, given in the input format.
 
-    Returns: The distance between the two points given.
+    Returns:
+        The distance between the two points given.
     """
     junction1_coords = map(int, junction1.split(","))
     junction2_coords = map(int, junction2.split(","))
@@ -31,7 +32,8 @@ def find_junction_in_circuit_list(junction: str, circuits: list[set[str]]) -> in
         junction: The junction to search for.
         circuits: The list of circuits to search.
 
-    Returns: The index of the circuit containing the given junction.
+    Returns:
+        The index of the circuit containing the given junction.
 
     Raises:
         ValueError: The junction was not found in the list of circuits.
@@ -52,7 +54,8 @@ def pair_junctions_by_distance(
         junctions: The list of junctions to consider.
         limit: The maximum number of pairs to return.
 
-    Returns: A list of tuples of (distance, junction1, junction2).
+    Returns:
+        A list of tuples of (distance, junction1, junction2).
     """
     junction_pairs = combinations(junctions, 2)
     distance_results = [

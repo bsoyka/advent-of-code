@@ -18,7 +18,8 @@ def complete_move(
         direction_str: The direction to move in (R is positive, L is negative)
         steps: The total number of steps to take
 
-    Returns: A tuple containing the final position and the number of 0s.
+    Returns:
+        A tuple containing the final position and the number of 0s.
     """
 
     position = starting_position

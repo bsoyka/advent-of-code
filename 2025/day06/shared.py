@@ -10,7 +10,8 @@ def solve_problem(input_list: list[str]) -> int:
         input_list: The vertical list of inputs, given as the numbers in string
             format followed by the operator.
 
-    Returns: The solution to the problem.
+    Returns:
+        The solution to the problem.
     """
     numbers = map(int, input_list[:-1])
 

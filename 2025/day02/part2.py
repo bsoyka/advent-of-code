@@ -17,7 +17,8 @@ def is_number_repeat(num: int) -> bool:
     Args:
         num: The number to test.
 
-    Returns: Whether the number is "invalid" by the problem criteria.
+    Returns:
+        Whether the number is "invalid" by the problem criteria.
     """
     num_str = str(num)
 
