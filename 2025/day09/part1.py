@@ -9,10 +9,11 @@ if __name__ == "__main__":
     result = 0
 
     for tile1, tile2 in combinations(RED_TILES, 2):
-        t1x, t1y = map(int, tile1.split(","))
-        t2x, t2y = map(int, tile2.split(","))
-        area = (abs(t1x - t2x) + 1) * (abs(t1y - t2y) + 1)
+        t1x, t1y = tile1.split(",")
+        t2x, t2y = tile2.split(",")
+        area = (abs(int(t1x) - int(t2x)) + 1) * (abs(int(t1y) - int(t2y)) + 1)
 
-        result = max(result, area)
+        if area > result:
+            result = area
 
     logger.success("Result: {}", result)
