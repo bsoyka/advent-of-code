@@ -74,9 +74,7 @@ class FactoryMachine:
         """
         input_parts = machine_line.split()
 
-        light_diagram = list(
-            map(lambda c: True if c == "#" else False, input_parts[0][1:-1])
-        )
+        light_diagram = list(map(lambda c: c == "#", input_parts[0][1:-1]))
         buttons = list(
             map(
                 lambda button: tuple(map(int, button[1:-1].split(","))),
