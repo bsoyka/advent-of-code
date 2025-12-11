@@ -5,6 +5,14 @@ from loguru import logger
 
 
 def get_all_possible_button_combinations(num_buttons: int) -> list[tuple[int]]:
+    """Determine all possible ways to press a given number of buttons.
+
+    Args:
+        num_buttons: The number of buttons available.
+
+    Returns:
+        A list of tuples, each representing a set of buttons to press.
+    """
     buttons = list(range(num_buttons))
     all_subsets = []
     for r in range(num_buttons + 1):
@@ -16,6 +24,18 @@ def get_all_possible_button_combinations(num_buttons: int) -> list[tuple[int]]:
 def test_buttons(
     buttons: list[set[int]], indices_to_press: tuple[int], desired_lights: list[bool]
 ) -> bool:
+    """Check whether a combination of buttons makes a machine work.
+
+    Args:
+        buttons: The available buttons on the machine, each represented as a set of
+            integer indices mapping to lights on the machine.
+        indices_to_press: A tuple of integer indices mapping to buttons to press.
+        desired_lights: The desired light pattern for the machine to work.
+
+    Returns:
+        Whether pressing the specified buttons causes the machine to display the desired
+        light sequence.
+    """
     lights = [False for _ in desired_lights]
 
     for bi in indices_to_press:
@@ -27,6 +47,16 @@ def test_buttons(
 
 
 class FactoryMachine:
+    """A factory machine, from Advent of Code day 10.
+
+    Attributes:
+        light_diagram: The desired light pattern to make the machine work, given as a
+            list of boolean values representing whether each light should be on or off.
+        buttons: A list of the buttons available on the machine, where each button is a
+            set of integer indices corresponding to which lights the button toggles.
+        joltage_requirements: An unused property.
+    """
+
     def __init__(
         self,
         light_diagram: list[bool],
@@ -39,6 +69,14 @@ class FactoryMachine:
 
     @classmethod
     def from_input_line(cls, machine_line: str) -> FactoryMachine:
+        """Initialize a factory machine from the format given in the input.
+
+        Args:
+            machine_line: A line of input.
+
+        Returns:
+            A factory machine object.
+        """
         input_parts = machine_line.split()
 
         raw_light_diagram, *raw_buttons, raw_joltage_requirements = input_parts
@@ -55,6 +93,7 @@ class FactoryMachine:
 
     @property
     def fewest_presses(self) -> int:
+        """The fewest button presses possible to make the machine work."""
         for button_combination in get_all_possible_button_combinations(
             len(self.buttons)
         ):
