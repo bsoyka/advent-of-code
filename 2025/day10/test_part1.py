@@ -27,8 +27,7 @@ def test_get_all_possible_button_combinations():
 def example_machine():
     return FactoryMachine(
         [False, True, True, False],
-        [{3}, {1, 3}, {2}, {2, 3}, {0, 2}, {0, 1}],
-        [3, 5, 4, 7],
+        [(3,), (1, 3), (2,), (2, 3), (0, 2), (0, 1)],
     )
 
 
@@ -36,8 +35,7 @@ def test_factory_machine_from_input_line():
     machine = FactoryMachine.from_input_line("[.###] (0,2,3) (2) (1,2,3) {19,9,30,28}")
 
     assert machine.light_diagram == [False, True, True, True]
-    assert machine.buttons == [{0, 2, 3}, {2}, {1, 2, 3}]
-    assert machine.joltage_requirements == [19, 9, 30, 28]
+    assert machine.buttons == [(0, 2, 3), (2,), (1, 2, 3)]
 
 
 def test_fewest_presses(example_machine):

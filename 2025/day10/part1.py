@@ -1,9 +1,11 @@
+from functools import cache
 from itertools import combinations
 from pathlib import Path
 
 from loguru import logger
 
 
+@cache
 def get_all_possible_button_combinations(num_buttons: int) -> list[tuple[int]]:
     """Determine all possible ways to press a given number of buttons.
 
@@ -22,12 +24,12 @@ def get_all_possible_button_combinations(num_buttons: int) -> list[tuple[int]]:
 
 
 def test_buttons(
-    buttons: list[set[int]], indices_to_press: tuple[int], desired_lights: list[bool]
+    buttons: list[tuple[int]], indices_to_press: tuple[int], desired_lights: list[bool]
 ) -> bool:
     """Check whether a combination of buttons makes a machine work.
 
     Args:
-        buttons: The available buttons on the machine, each represented as a set of
+        buttons: The available buttons on the machine, each represented as a tuple of
             integer indices mapping to lights on the machine.
         indices_to_press: A tuple of integer indices mapping to buttons to press.
         desired_lights: The desired light pattern for the machine to work.
@@ -53,19 +55,12 @@ class FactoryMachine:
         light_diagram: The desired light pattern to make the machine work, given as a
             list of boolean values representing whether each light should be on or off.
         buttons: A list of the buttons available on the machine, where each button is a
-            set of integer indices corresponding to which lights the button toggles.
-        joltage_requirements: An unused property.
+            tuple of integer indices corresponding to which lights the button toggles.
     """
 
-    def __init__(
-        self,
-        light_diagram: list[bool],
-        buttons: list[set[int]],
-        joltage_requirements: list[int],
-    ):
+    def __init__(self, light_diagram: list[bool], buttons: list[tuple[int]]):
         self.light_diagram = light_diagram
         self.buttons = buttons
-        self.joltage_requirements = joltage_requirements
 
     @classmethod
     def from_input_line(cls, machine_line: str) -> FactoryMachine:
@@ -79,17 +74,17 @@ class FactoryMachine:
         """
         input_parts = machine_line.split()
 
-        raw_light_diagram, *raw_buttons, raw_joltage_requirements = input_parts
-
         light_diagram = list(
-            map(lambda c: True if c == "#" else False, raw_light_diagram[1:-1])
+            map(lambda c: True if c == "#" else False, input_parts[0][1:-1])
         )
         buttons = list(
-            map(lambda button: set(map(int, button[1:-1].split(","))), raw_buttons)
+            map(
+                lambda button: tuple(map(int, button[1:-1].split(","))),
+                input_parts[1:-1],
+            )
         )
-        joltage_requirements = list(map(int, raw_joltage_requirements[1:-1].split(",")))
 
-        return cls(light_diagram, buttons, joltage_requirements)
+        return cls(light_diagram, buttons)
 
     @property
     def fewest_presses(self) -> int:
